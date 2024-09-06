@@ -29,6 +29,9 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
 
+#include "../GSM/SOFT_WARE_TIMER/CPU_TIMER.H"
+#include "../GSM/JSON/JSON.H"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

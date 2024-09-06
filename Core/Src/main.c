@@ -1683,7 +1683,7 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM3_Init();
   MX_ADC1_Init();
-  MX_IWDG_Init();
+  //MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
 	
 	TIM5_Init();		//50us Interrupter
@@ -1774,14 +1774,19 @@ int main(void)
 	InitializeVariables();
 	EncoderSetValue(0);
 	
+	gsm_init();
 	
 	while (1)
   {
+		
+
+			test();
+		
+		
 		WDT_RESET;
 		Clear_UART_Errors();
 		PT_RMS_Calculate();
 		EncoderGetValue();
-		
 		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1793,8 +1798,7 @@ int main(void)
 			
 			AddressableInputsAndOutputs(); //It takes maximum 24 us
 		}
-		
-		
+			
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////
 		/////////////////////////////////////////  Call Task 20 Ms   /////////////////////////////////////////
