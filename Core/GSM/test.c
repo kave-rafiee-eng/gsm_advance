@@ -1,7 +1,8 @@
 #include "main.h"
 #include "test.h"
 #include "stdio.h"
-
+#include "stdlib.h"
+#include "string.h"
 
 #include "../Inc/Variable.h"
 #include "../Inc/Serial.h"
@@ -26,37 +27,52 @@ char last_get=0;
 
 extern struct JSON_OUT	 json;
 extern struct JSON_PROTOCOL json_protocol;
+extern struct MODBUS_SLAVE modbus_slave;
 
 int time=0;
 int timer_eeprom=0;
 
-void test(){
+int last_i_get=0;
+
+void json_test();
 	
+void test_modbus(){
 	
-	tbr_g1[tbr_g1_TEST].EN=1;
-	tbr_g1[tbr_g1_TEST].C_set_time=10;
+	i_get = UART_BUFFER_SIZE - DMA1_Stream2->NDTR;
+	
+	if( i_get != last_i_get ) { 
+		last_i_get = i_get;
+		tbr_g1[tbr_g1_TEST].I_time=0;
+	}
+	
+	if ( i_get > 0 )tbr_g1[tbr_g1_TEST].EN=1;
+	else tbr_g1[tbr_g1_TEST].EN=0;
+	
+	tbr_g1[tbr_g1_TEST].C_set_time=20;
 	
 	if( tbr_g1[tbr_g1_TEST].F_end ){ tbr_g1[tbr_g1_TEST].F_end=0;
-		
-		//puts("a");
-		
-		i_get = UART_BUFFER_SIZE - DMA1_Stream2->NDTR;
-		
-		last_get=0;
-		int i=0;
-		for(i=0; i<UART_BUFFER_SIZE; i++ ){
+		if( i_get > 0 ){
+			modbus_get_data_dma();
+			modbus_slave_manage();
 			
-			if( HALL_RX_Buffer[i] == '}' ){
-				last_get = '}';
-				break;
+			tbr_g1[tbr_g1_TEST].EN=0;
+		}				
+	}
+		
+	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
+		
+			memset( json.document,0,strlen(json.document));
+			for( int i=0; i< modbus_slave.data_count; i++ ){
+					json.document[i] = modbus_slave.buf[i];
 			}
-		}
-		//last_get = HALL_RX_Buffer[i_get-1];
-		
-		if( last_get == '}' ){
-			
-			json_get_data_dma();
 
+			json_test();
+	}
+	
+}
+	
+void json_test(){
+	
 			read_protocol_json();
 	
 			if( json_protocol.data_w1_type > 0 ){
@@ -98,7 +114,7 @@ void test(){
 
 			if( json_protocol.data_r1_type > 0 ){
 				
-					if( strcmp(json_protocol.name_r1,travel_time_addres) == 0 ){ // read travel_time_addres	
+					/*if( strcmp(json_protocol.name_r1,travel_time_addres) == 0 ){ // read travel_time_addres	
 						char str[100];
 						sprintf(str,"{\"name_w1\":\"%s\",\"data_w1\":%d,}",travel_time_addres,Stng[TRAVEL_TIME]);
 						puts(str); 
@@ -112,37 +128,10 @@ void test(){
 						puts(str); 
 						time=1;	
 		
-					}
-					
-					
-					
-									
+					}*/
+										
 			}
-			else{
-				time=100;
-			}
-			
-			reset_json();
-			
-		}
-		
-		if(time>0)time--;
-		
-		if(timer_eeprom>0)timer_eeprom++;
-		if( timer_eeprom > 500 ){ timer_eeprom=0;
-			EEPROMSaveFlag=1;
-		}
-		
-	}
-	
-	
-	if( time == 0 ){ time=500;
-		char str[100];
-		sprintf(str,"{\"name_w1\":\"-\",\"data_w1\":\"-\",}");
-		puts(str); 					
-	}
 
-	//EEPROMSaveFlag=1;
 		
 }
 

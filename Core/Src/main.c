@@ -1775,13 +1775,22 @@ int main(void)
 	EncoderSetValue(0);
 	
 	gsm_init();
+	/**
+	while (1)
+  {
+		//WDT_RESET;
+		//test();
+		
+	}**/
+	
 	
 	while (1)
   {
 		
 
-			test();
+		//test();
 		
+		test_modbus();
 		
 		WDT_RESET;
 		Clear_UART_Errors();
@@ -2219,11 +2228,8 @@ int main(void)
 		
 		
 		PreMode = Mode;
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
   }
-  /* USER CODE END 3 */
+
 }
 
 /**

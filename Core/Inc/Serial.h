@@ -1,3 +1,6 @@
+#ifndef __SERIAL_H
+#define __SERIAL_H
+
 #include "main.h"
 #include "EEPROM.h"
 
@@ -47,4 +50,4 @@ void ParallelAnalog_OD_Module_SerialDataTransmition(void);
 
 void Module_SerialDataTransmition(void);
 
-
+#endif

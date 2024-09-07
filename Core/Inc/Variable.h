@@ -1,3 +1,7 @@
+
+#ifndef __VARIABLE_H
+#define __VARIABLE_H
+
 #include "main.h"
 #include "n1202.h"
 #include "Hardware.h"
@@ -346,4 +350,4 @@ extern	struct	FloorProperty{
 int32_t abs32(int32_t In);
 
 
-
+#endif

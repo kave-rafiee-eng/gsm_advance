@@ -32,6 +32,9 @@ extern "C" {
 #include "../GSM/SOFT_WARE_TIMER/CPU_TIMER.H"
 #include "../GSM/JSON/JSON.H"
 
+#include "../GSM/modbus/modbus.H"
+#include "../GSM/modbus/CRC.H"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

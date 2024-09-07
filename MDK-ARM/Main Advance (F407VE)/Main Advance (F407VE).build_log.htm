@@ -5,352 +5,48 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.34.0.0
 Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: sd sd, sd, LIC=FQQMA-1LZ4D-E0VN4-FTDGJ-AENBC-W2HJZ
+License Information: kave rafie, ravis, LIC=JL28G-VKMBM-KPNZY-IWNX7-YXSRH-FIU8E
  
 Tool Versions:
-Toolchain:       MDK-ARM Professional  Version: 5.34.0.0
-Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 7 (build 960)
-Assembler:       Armasm.exe V5.06 update 7 (build 960)
-Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
-Library Manager: ArmAr.exe V5.06 update 7 (build 960)
-Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+Toolchain:       MDK-ARM Plus  Version: 5.34.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
 CPU DLL:         SARMCM3.DLL V5.34.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
 Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
 Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
-C:\Users\kave240G\Desktop\Company_work\ravis\GSM\STM_F407\gsm_advance\MDK-ARM\Main Advance (F407VE).uvprojx
-Project File Date:  09/03/2024
+C:\Users\kave\Desktop\Ravis_Kave\ravis_shared\GSM\Main Advance_F407)\MDK-ARM\Main Advance (F407VE).uvprojx
+Project File Date:  09/07/2024
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Main Advance (F407VE)'
-compiling stm32f4xx_hal_msp.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-../Core/Src/stm32f4xx_hal_msp.c: 7 warnings, 0 errors
-compiling AT24Cxx.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\Src\AT24Cxx.c: 7 warnings, 0 errors
-compiling stm32f4xx_it.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-../Core/Src/stm32f4xx_it.c: 7 warnings, 0 errors
+../Core/Src/main.c(1777): warning: implicit declaration of function 'gsm_init' is invalid in C99 [-Wimplicit-function-declaration]
+        gsm_init();
+        ^
+../Core/Src/main.c(1793): warning: implicit declaration of function 'test_modbus' is invalid in C99 [-Wimplicit-function-declaration]
+                test_modbus();
+                ^
+2 warnings generated.
 compiling main.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-../Core/Src/main.c(280): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		if(Drive_Timing < 200.0) Drive_Timing += 0.1;
-../Core/Src/main.c(280): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		if(Drive_Timing < 200.0) Drive_Timing += 0.1;
-../Core/Src/main.c(385): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  					 RelayOut_Timer += 0.1;
-../Core/Src/main.c(397): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  					 RelayOut_Timer += 0.1;
-../Core/Src/main.c(458): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		else if(Drive_Timing < 200.0) 								{Drive_Timing += 0.1;}
-../Core/Src/main.c(458): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		else if(Drive_Timing < 200.0) 								{Drive_Timing += 0.1;}
-../Core/Src/main.c(532): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		else if(Drive_Timing < 200.0)  									{Drive_Timing += 0.1;}
-../Core/Src/main.c(532): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		else if(Drive_Timing < 200.0)  									{Drive_Timing += 0.1;}
-../Core/Src/main.c(654): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  					 RelayOut_Timer += 0.1;
-../Core/Src/main.c(666): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  					 RelayOut_Timer += 0.1;
-../Core/Src/main.c(735): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			if(Door_Timing < Stng[DOOR_OPEN_DELAY])  {Door_Timing += 0.1;}
-../Core/Src/main.c(773): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  				if(Door_Timing < Stng[DOOR_CLOSE_DELAY])  Door_Timing += 0.1;
-../Core/Src/main.c(791): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  					Door_Timing += 0.01; 
-../Core/Src/main.c(1777): warning:  #223-D: function "gsm_init" declared implicitly
-  	gsm_init();
-../Core/Src/main.c(1783): warning:  #223-D: function "test" declared implicitly
-  			test();
-../Core/Src/main.c(1853): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			if(PowerVoltageMainBoard < 18.0 || PowerVoltageCabin < 18.0) {Alarm_LowVoltge24 = 1;}
-../Core/Src/main.c(1853): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			if(PowerVoltageMainBoard < 18.0 || PowerVoltageCabin < 18.0) {Alarm_LowVoltge24 = 1;}
-../Core/Src/main.c(2299): warning:  #188-D: enumerated type mixed with another type
-    hadc1.Init.ContinuousConvMode = ENABLE;
-../Core/Src/main.c(2300): warning:  #188-D: enumerated type mixed with another type
-    hadc1.Init.DiscontinuousConvMode = DISABLE;
-../Core/Src/main.c(2305): warning:  #188-D: enumerated type mixed with another type
-    hadc1.Init.DMAContinuousRequests = ENABLE;
-../Core/Src/main.c(104): warning:  #177-D: variable "ActivityList"  was declared but never referenced
-  static const char ActivityList[][15]= //Length = 14
-../Core/Src/main.c(2402): warning:  #177-D: function "MX_IWDG_Init"  was declared but never referenced
-  static void MX_IWDG_Init(void)
-../Core/Src/main.c: 29 warnings, 0 errors
-compiling EEPROM.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\Src\EEPROM.c: 7 warnings, 0 errors
-compiling Hardware.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\Src\Hardware.c(38): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		ADCToVoltageFactor = 1.21 / VRefIntAvg;
-..\Core\Src\Hardware.c(43): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		Ph_R_RMS = (PT_R_RMS * ADCToVoltageFactor) * 470.0;
-..\Core\Src\Hardware.c(44): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		Ph_S_RMS = (PT_S_RMS * ADCToVoltageFactor) * 470.0;
-..\Core\Src\Hardware.c(45): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		Ph_T_RMS = (PT_T_RMS * ADCToVoltageFactor) * 470.0;
-..\Core\Src\Hardware.c: 11 warnings, 0 errors
-compiling Menu.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\Src\Menu.c(1317): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			else if(Ratio == 1.0 || Unit == 0 || Unit == '%') 
-..\Core\Src\Menu.c(1321): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			else if(Ratio > 0.09)      
-..\Core\Src\Menu.c: 9 warnings, 0 errors
-compiling n1202.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\Src\n1202.c: 7 warnings, 0 errors
-compiling PB_Num.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\Src\PB_Num.c: 7 warnings, 0 errors
-compiling stdout_user.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-stdout_user.c: 7 warnings, 0 errors
-compiling Variable.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\Src\Variable.c: 7 warnings, 0 errors
-compiling Serial.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\Src\Serial.c: 7 warnings, 0 errors
-compiling CPU_TIMER.C...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\GSM\SOFT_WARE_TIMER\CPU_TIMER.C(86): warning:  #1-D: last line of file ends without a newline
-  }
-..\Core\GSM\SOFT_WARE_TIMER\CPU_TIMER.C: 8 warnings, 0 errors
-compiling test.c...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\GSM\test.h(7): warning:  #1-D: last line of file ends without a newline
-  #endif /* __TEST_H */
-..\Core\GSM\test.c(77): warning:  #223-D: function "strcmp" declared implicitly
-  					if( strcmp(json_protocol.name_w1,travel_time_addres) == 0 ){ // write travel_time_addres	
-..\Core\GSM\test.c(80): warning:  #223-D: function "atoi" declared implicitly
-  									Stng[TRAVEL_TIME] = atoi(json_protocol.data_w1);
-..\Core\GSM\test.c(85): warning:  #223-D: function "strcmp" declared implicitly
-  					if( strcmp(json_protocol.name_w1,door_control_type_ADDRESS) == 0 ){ // write door_control_type_ADDRESS	
-..\Core\GSM\test.c(101): warning:  #223-D: function "strcmp" declared implicitly
-  					if( strcmp(json_protocol.name_r1,travel_time_addres) == 0 ){ // read travel_time_addres	
-..\Core\GSM\test.c(109): warning:  #223-D: function "strcmp" declared implicitly
-  					if( strcmp(json_protocol.name_r1,door_control_type_ADDRESS) == 0 ){ // read door_control_type_ADDRESS	
-..\Core\GSM\test.c: 13 warnings, 0 errors
-compiling JSON.C...
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../GSM/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-../Core/Inc/../GSM/JSON/JSON.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../GSM/JSON/JSON.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../GSM/JSON/JSON.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../GSM/JSON/JSON.H(40): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-..\Core\GSM\JSON\JSON.C(122): warning:  #167-D: argument of type "volatile char *" is incompatible with parameter of type "void *"
-  	memset(HALL_RX_Buffer,0,UART_BUFFER_SIZE);
-..\Core\GSM\JSON\JSON.C: 8 warnings, 0 errors
 linking...
-Program Size: Code=74582 RO-data=19462 RW-data=2760 ZI-data=26000  
+Program Size: Code=67662 RO-data=10246 RW-data=2108 ZI-data=26420  
 FromELF: creating hex file...
-"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 141 Warning(s).
+"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
-                ARM.CMSIS.6.1.0
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
                 CMSIS (Common Microcontroller Software Interface Standard)
-   * Component: CORE Version: 6.1.0
+   * Component: CORE Version: 5.6.0
 
 Package Vendor: Keil
                 https://www.keil.com/pack/Keil.ARM_Compiler.1.7.2.pack
@@ -365,20 +61,20 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_Main_Advance__F407VE_
-  C:\Users\kave240G\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include
-  C:\Users\kave240G\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  C:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include
+  C:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:6.1.0
+   * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS\Core\Include\tz_context.h
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
-      Source file:   Template\stdout_user.c
-      Source file:   Template\stdout_display.c
-      Source file:   Template\stdout_USART.c
       Source file:   Source\retarget_io.c
-Build Time Elapsed:  00:01:22
+      Source file:   Template\stdout_user.c
+      Source file:   Template\stdout_USART.c
+      Source file:   Template\stdout_display.c
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
