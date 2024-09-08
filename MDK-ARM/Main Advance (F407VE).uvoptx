@@ -218,7 +218,7 @@
         <Ww>
           <count>13</count>
           <WinNumber>1</WinNumber>
-          <ItemText>modbus</ItemText>
+          <ItemText>modbus,0x10</ItemText>
         </Ww>
         <Ww>
           <count>14</count>
@@ -813,6 +813,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\Core\GSM\modbus\modbus.c</PathWithFileName>
       <FilenameWithoutPath>modbus.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>5</GroupNumber>
+      <FileNumber>41</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Core\GSM\modbus\modbus_master.c</PathWithFileName>
+      <FilenameWithoutPath>modbus_master.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

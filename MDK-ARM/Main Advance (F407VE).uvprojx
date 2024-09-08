@@ -603,6 +603,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\GSM\modbus\modbus.c</FilePath>
             </File>
+            <File>
+              <FileName>modbus_master.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\GSM\modbus\modbus_master.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

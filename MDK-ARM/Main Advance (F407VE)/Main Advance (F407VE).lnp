@@ -39,6 +39,7 @@
 "main advance (f407ve)\json.o"
 "main advance (f407ve)\crc.o"
 "main advance (f407ve)\modbus.o"
+"main advance (f407ve)\modbus_master.o"
 "main advance (f407ve)\retarget_io.o"
 --strict --scatter "Main Advance (F407VE)\Main Advance (F407VE).sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

@@ -107,6 +107,8 @@ void reset_json(){
 	memset( json_protocol.name_w1 ,0,strlen(json_protocol.name_w1));
 	memset( json_protocol.name_r1 ,0,strlen(json_protocol.name_r1));
 	
+	memset( json.document ,0,strlen(json.document));
+	
 }
 
 void json_get_data_dma(){

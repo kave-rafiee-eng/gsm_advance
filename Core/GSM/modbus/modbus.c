@@ -48,10 +48,13 @@ char modbus_slave_manage(){
 			modbus_slave.data_count = slave_data_count;
 			modbus_slave.address = slave_start_add;
 			modbus_slave.F_new_data=1;
+			
+			//modbus_master_write_register_SINGLE(SLAVE_ADD,FC_WRITE_TO_SLAVE_SINGLE,2,7);
+			
 		}
 		
 	}
-	else 0;
+	else return 0;
 }
 
 

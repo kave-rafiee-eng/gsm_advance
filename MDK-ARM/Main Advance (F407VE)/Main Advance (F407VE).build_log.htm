@@ -27,18 +27,21 @@ Project File Date:  09/07/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Main Advance (F407VE)'
-../Core/Src/main.c(1777): warning: implicit declaration of function 'gsm_init' is invalid in C99 [-Wimplicit-function-declaration]
-        gsm_init();
-        ^
-../Core/Src/main.c(1793): warning: implicit declaration of function 'test_modbus' is invalid in C99 [-Wimplicit-function-declaration]
-                test_modbus();
-                ^
-2 warnings generated.
-compiling main.c...
+../Core/GSM/test.c(121): warning: implicit declaration of function 'modbus_master_write_register_MULTI' is invalid in C99 [-Wimplicit-function-declaration]
+                                                modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);                                
+                                                ^
+../Core/GSM/test.c(132): warning: implicit declaration of function 'modbus_master_write_register_MULTI' is invalid in C99 [-Wimplicit-function-declaration]
+                                                modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);
+                                                ^
+../Core/GSM/test.c(140): warning: implicit declaration of function 'modbus_master_write_register_MULTI' is invalid in C99 [-Wimplicit-function-declaration]
+                                                modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);
+                                                ^
+3 warnings generated.
+compiling test.c...
 linking...
-Program Size: Code=67662 RO-data=10246 RW-data=2108 ZI-data=26420  
+Program Size: Code=68230 RO-data=10338 RW-data=2116 ZI-data=26420  
 FromELF: creating hex file...
-"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 2 Warning(s).
+"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -74,7 +77,7 @@ Package Vendor: Keil
       Source file:   Template\stdout_user.c
       Source file:   Template\stdout_USART.c
       Source file:   Template\stdout_display.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
