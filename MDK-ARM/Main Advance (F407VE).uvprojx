@@ -608,6 +608,16 @@
               <FileType>1</FileType>
               <FilePath>..\Core\GSM\modbus\modbus_master.c</FilePath>
             </File>
+            <File>
+              <FileName>read_setting.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\GSM\read_setting.c</FilePath>
+            </File>
+            <File>
+              <FileName>write_settng.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\GSM\write_settng.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

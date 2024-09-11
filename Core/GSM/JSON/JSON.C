@@ -25,16 +25,17 @@ int json_find(char *buffer_uart,char *command){
 	return -1;
 }
 
-
+char num[10];
+int ad =0;
 char json_get_data( char *buffer , char *command ){
     
 		//strcpy( json.str_data , "");
 		memset(json.str_data,0,strlen(json.str_data));
 	
-    int ad =0;
+    
     ad = json_find(buffer,command);
 	
-		if( ad == 0 )return 0;
+		if( ad == -1 )return 0;
     
     char i=0;
     if( buffer[ad] == '"' ){
@@ -45,7 +46,7 @@ char json_get_data( char *buffer , char *command ){
         return 1;        
     }
     else{
-        char num[10];
+        memset(num,0,10);
         while( buffer[ad+i] != ',' &&  buffer[ad+i] != '}' ){
             
     		num[i] = buffer[ad+i];
@@ -55,13 +56,14 @@ char json_get_data( char *buffer , char *command ){
     	json.data = atoi(num);
     	return 2;
     }
+		
+		return 0;
 }
-
 
 
 void read_protocol_json(){
 	
-	if( json_get_data(json.document , "\"name_w1\":") == TYPE_STR ){
+	if( json_get_data(json.document , "\"t1\":") == TYPE_WORD ){
 		strcpy( json_protocol.name_w1 , "");
 		strcpy( json_protocol.name_w1 , json.str_data);
 						
@@ -126,6 +128,70 @@ void json_get_data_dma(){
 	
 }
 
+int replacechar(char *str, char orig, char rep) {
+    char *ix = str;
+    int n = 0;
+    while((ix = strchr(ix, orig)) != NULL) {
+        *ix++ = rep;
+        n++;
+    }
+    return n;
+}
+
+int server_protocol_arreay_select;
+int server_protocol_byte_count;
+int server_protocol_data;
+int server_protocol_status;
+
+char buffer_http_send_to_server[200];
+char buffer_http_send_to_server_index=0;
+
+void server_protocol_json(){
+	
+	memset(buffer_http_send_to_server,0,200);
+	buffer_http_send_to_server_index=0;
+	
+	if( json_get_data(json.document , "\"ar1\":") == TYPE_WORD ){
+		server_protocol_arreay_select = json.data;				
+		if( json_get_data(json.document , "\"ad1\":") == TYPE_WORD ){
+			server_protocol_byte_count = json.data;
+			if( json_get_data(json.document , "\"da1\":") == TYPE_WORD ){
+				server_protocol_data = json.data;	
+				if( json_get_data(json.document , "\"st1\":") == TYPE_WORD ){
+					server_protocol_status = json.data;
+					
+					memset(buffer_http_send_to_server,0,200);
+					sprintf(buffer_http_send_to_server,"{\"serial\":\"100\",\"url\":\"");
+					server_protocol_data_manage();
+					strcat(buffer_http_send_to_server,"\"}");			
+					modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(buffer_http_send_to_server),buffer_http_send_to_server);
+					
+					
+				}
+			}
+		}	
+	}	
+}
+
+
+/*
+
+	if( json_get_data(json.document , "\"t1\":") == TYPE_WORD ){
+		strcpy( json_protocol.name_w1 , "");
+		strcpy( json_protocol.name_w1 , json.str_data);
+						
+		if( json_get_data(json.document , "\"data_w1\":") == TYPE_STR ){
+			strcpy( json_protocol.data_w1 , "");
+			strcpy( json_protocol.data_w1 , json.str_data);
+			json_protocol.data_w1_type = TYPE_STR;
+		}
+		else if( json_get_data(json.document , "\"data_w1\":") == TYPE_WORD ){
+			json_protocol.data_w1_word = json.data;
+			json_protocol.data_w1_type = TYPE_WORD;
+		} 
+
+
+*/
 
 
 

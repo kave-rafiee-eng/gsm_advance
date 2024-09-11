@@ -18,7 +18,9 @@ char modbus_master_write_register_single(uint8_t slave_addres , uint8_t fc_code 
 void modbus_test();
 void modbus_get_data_dma();
 char modbus_slave_manage();
-
+char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code , uint16_t start_addres , uint16_t world_count , uint8_t *data );
+	
+	
 struct MODBUS_RTU {
 	
 	volatile uint8_t buf_rx[200];

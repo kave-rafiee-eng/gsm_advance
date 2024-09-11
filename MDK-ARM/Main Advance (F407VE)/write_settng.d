@@ -1,4 +1,4 @@
-main\ advance\ (f407ve)/modbus.o: ..\Core\GSM\modbus\modbus.c \
+main\ advance\ (f407ve)/write_settng.o: ..\Core\GSM\write_settng.c \
   ..\Core\Inc\main.h ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -39,13 +39,13 @@ main\ advance\ (f407ve)/modbus.o: ..\Core\GSM\modbus\modbus.c \
   ..\Core\Inc\..\GSM\SOFT_WARE_TIMER\CPU_TIMER.H \
   ..\Core\Inc\..\GSM\JSON\JSON.H ..\Core\Inc\..\GSM\modbus\modbus.H \
   ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\..\GSM\setting_adress.H \
-  ..\Core\GSM\modbus\modbus.h \
+  ..\Core\GSM\setting_adress.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\Core\Inc\..\Inc\Variable.h ..\Core\Inc\main.h ..\Core\Inc\n1202.h \
+  ..\Core\GSM\..\Inc\Variable.h ..\Core\Inc\main.h ..\Core\Inc\n1202.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\Core\Inc\font.h \
   ..\Core\Inc\Hardware.h ..\Core\Inc\Defines.h ..\Core\Inc\Serial.h \
   ..\Core\Inc\EEPROM.h ..\Core\Inc\Menu.h ..\Core\Inc\AT24Cxx.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h ..\Core\Inc\PB_Num.h \
-  ..\Core\Inc\..\Inc\Serial.h
+  ..\Core\GSM\..\Inc\Serial.h

@@ -35,6 +35,8 @@ extern "C" {
 #include "../GSM/modbus/modbus.H"
 #include "../GSM/modbus/CRC.H"
 
+#include "../GSM/setting_adress.H"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

@@ -22,26 +22,23 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 C:\Users\kave\Desktop\Ravis_Kave\ravis_shared\GSM\Main Advance_F407)\MDK-ARM\Main Advance (F407VE).uvprojx
-Project File Date:  09/07/2024
+Project File Date:  09/09/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Main Advance (F407VE)'
-../Core/GSM/test.c(121): warning: implicit declaration of function 'modbus_master_write_register_MULTI' is invalid in C99 [-Wimplicit-function-declaration]
-                                                modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);                                
-                                                ^
-../Core/GSM/test.c(132): warning: implicit declaration of function 'modbus_master_write_register_MULTI' is invalid in C99 [-Wimplicit-function-declaration]
-                                                modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);
-                                                ^
-../Core/GSM/test.c(140): warning: implicit declaration of function 'modbus_master_write_register_MULTI' is invalid in C99 [-Wimplicit-function-declaration]
-                                                modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);
-                                                ^
-3 warnings generated.
-compiling test.c...
+../Core/GSM/write_settng.c(62): warning: passing 'char [100]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);                                
+                                                                                                                   ^~~
+../Core/Inc/../GSM/modbus/modbus.H(21): note: passing argument to parameter 'data' here
+char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code , uint16_t start_addres , uint16_t world_count , uint8_t *data );
+                                                                                                                                          ^
+1 warning generated.
+compiling write_settng.c...
 linking...
-Program Size: Code=68230 RO-data=10338 RW-data=2116 ZI-data=26420  
+Program Size: Code=67610 RO-data=10246 RW-data=2108 ZI-data=26436  
 FromELF: creating hex file...
-"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 3 Warning(s).
+"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 

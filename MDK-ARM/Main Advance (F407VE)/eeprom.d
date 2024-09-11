@@ -38,12 +38,13 @@ main\ advance\ (f407ve)/eeprom.o: ..\Core\Src\EEPROM.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Core\Inc\..\GSM\SOFT_WARE_TIMER\CPU_TIMER.H \
   ..\Core\Inc\..\GSM\JSON\JSON.H ..\Core\Inc\..\GSM\modbus\modbus.H \
-  ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\Menu.h ..\Core\Inc\main.h \
-  ..\Core\Inc\n1202.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
-  ..\Core\Inc\font.h ..\Core\Inc\AT24Cxx.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h ..\Core\Inc\EEPROM.h \
-  ..\Core\Inc\Defines.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ..\Core\Inc\n1202.h ..\Core\Inc\Serial.h ..\Core\Inc\EEPROM.h \
-  ..\Core\Inc\Hardware.h ..\Core\Inc\Variable.h ..\Core\Inc\Hardware.h \
-  ..\Core\Inc\Defines.h ..\Core\Inc\Serial.h ..\Core\Inc\Menu.h \
-  ..\Core\Inc\AT24Cxx.h ..\Core\Inc\PB_Num.h
+  ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\..\GSM\setting_adress.H \
+  ..\Core\Inc\Menu.h ..\Core\Inc\main.h ..\Core\Inc\n1202.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\Core\Inc\font.h \
+  ..\Core\Inc\AT24Cxx.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ..\Core\Inc\EEPROM.h ..\Core\Inc\Defines.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\Core\Inc\n1202.h \
+  ..\Core\Inc\Serial.h ..\Core\Inc\EEPROM.h ..\Core\Inc\Hardware.h \
+  ..\Core\Inc\Variable.h ..\Core\Inc\Hardware.h ..\Core\Inc\Defines.h \
+  ..\Core\Inc\Serial.h ..\Core\Inc\Menu.h ..\Core\Inc\AT24Cxx.h \
+  ..\Core\Inc\PB_Num.h

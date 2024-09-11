@@ -38,4 +38,4 @@ main\ advance\ (f407ve)/crc.o: ..\Core\GSM\modbus\CRC.C \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Core\Inc\..\GSM\SOFT_WARE_TIMER\CPU_TIMER.H \
   ..\Core\Inc\..\GSM\JSON\JSON.H ..\Core\Inc\..\GSM\modbus\modbus.H \
-  ..\Core\Inc\..\GSM\modbus\CRC.H
+  ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\..\GSM\setting_adress.H

@@ -13,6 +13,7 @@ char json_get_data( char *buffer , char *command );
 void json_get_data_dma();
 void read_protocol_json();
 void reset_json();
+int replacechar(char *str, char orig, char rep);
 
 struct JSON_OUT 
 {

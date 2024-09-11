@@ -38,7 +38,8 @@ main\ advance\ (f407ve)/variable.o: ..\Core\Src\Variable.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Core\Inc\..\GSM\SOFT_WARE_TIMER\CPU_TIMER.H \
   ..\Core\Inc\..\GSM\JSON\JSON.H ..\Core\Inc\..\GSM\modbus\modbus.H \
-  ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\n1202.h ..\Core\Inc\main.h \
+  ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\..\GSM\setting_adress.H \
+  ..\Core\Inc\n1202.h ..\Core\Inc\main.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\Core\Inc\font.h \
   ..\Core\Inc\Hardware.h ..\Core\Inc\Defines.h ..\Core\Inc\Serial.h \
   ..\Core\Inc\EEPROM.h ..\Core\Inc\Menu.h ..\Core\Inc\n1202.h \

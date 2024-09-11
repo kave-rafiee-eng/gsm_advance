@@ -1,5 +1,4 @@
 #include "main.h"
-#include "test.h"
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
@@ -7,15 +6,13 @@
 #include "../Inc/Variable.h"
 #include "../Inc/Serial.h"
 
-#define travel_time_addres "general*travel_time"
-#define door_control_type_ADDRESS "general*door*control_type"
 
 extern char List_DoorControlType[][8];
 	
 extern volatile	uint8_t			Stng[SETTING_ARRAY_SIZE];
 extern volatile  uint8_t   	EEPROMSaveFlag;
 
-extern char 									HALL_TX_Buffer[UART_BUFFER_SIZE];
+extern char 								HALL_TX_Buffer[UART_BUFFER_SIZE];
 extern volatile	char				HALL_RX_Buffer[UART_BUFFER_SIZE];
 
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
@@ -68,15 +65,19 @@ void test_modbus(){
 					json.document[i] = modbus_slave.buf[i];
 			}
 
-			json_test();
+			
+			
+			server_protocol_json();
+			
+			
 	}
 	
 }
 	
+char write_data=0;
+
 void json_test(){
 
-			char write_data=0;
-	
 			read_protocol_json();
 	
 			if( json_protocol.data_w1_type > 0 ){
@@ -84,7 +85,7 @@ void json_test(){
 					//puts("/name = ");
 					//puts( json_protocol.name_w1 );	
 				
-					if( json_protocol.data_w1_type == TYPE_STR ){
+					/*if( json_protocol.data_w1_type == TYPE_STR ){
 							//puts("/data_str = ");
 							//puts( json_protocol.data_w1 );	
 					}
@@ -93,53 +94,17 @@ void json_test(){
 							sprintf(str,"/data_word = %d",json_protocol.data_w1_word);
 							//puts(str);    
 							write_data=1;
-						
-					}	
-					if( strcmp(json_protocol.name_w1,travel_time_addres) == 0 ){ // write travel_time_addres	
-							if( json_protocol.data_w1_type == TYPE_STR ){
-									//puts("/travel_time$ = ");
-									Stng[TRAVEL_TIME] = atoi(json_protocol.data_w1);
-									timer_eeprom = 500;
-									write_data=1;
-							}			
-					}
-					if( strcmp(json_protocol.name_w1,door_control_type_ADDRESS) == 0 ){ // write door_control_type_ADDRESS	
-							if( json_protocol.data_w1_type == TYPE_STR ){			
-									char i=0;
-									for(i=0;i<3;i++){
-											if( strcmp( json_protocol.data_w1 , List_DoorControlType[i] ) == 0 ){
-												Stng[DOOR_CONTROL_TYPE] = i;
-												write_data=1;										
-											}
-									}
-							}			
-					}		
+					}	*/
 
-					if( write_data ){
-						char str[100];
-						sprintf(str,"{\"serial\":\"%d\",\"name_w1\":\"OK\",\"data_w1\":\"OK\",}",device_serial);
-						modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);				
-					}
+				
+					write_setting_manage();
 					
 			}
 
 			if( json_protocol.data_r1_type > 0 ){
 				
-					if( strcmp(json_protocol.name_r1,travel_time_addres) == 0 ){ // read travel_time_addres	
-						char str[100];
-						sprintf(str,"{\"serial\":\"%d\",\"name_w1\":\"%s\",\"data_w1\":%d,}",device_serial,travel_time_addres,Stng[TRAVEL_TIME]);
-						//puts(str); 
-						modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);
-
-					}
+					read_setting_manage();
 					
-					if( strcmp(json_protocol.name_r1,door_control_type_ADDRESS) == 0 ){ // read door_control_type_ADDRESS	
-						char str[100];
-						sprintf(str,"{\"serial\":\"%d\",\"name_w1\":\"%s\",\"data_w1\":\"%s\",}",device_serial,door_control_type_ADDRESS,List_DoorControlType[Stng[DOOR_CONTROL_TYPE]]);
-						//puts(str); 
-						modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);
-					}
-										
 			}
 
 		reset_json();
