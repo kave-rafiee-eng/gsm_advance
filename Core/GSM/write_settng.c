@@ -96,6 +96,10 @@ void server_protocol_data_manage(  ){
 				if( server_protocol_byte_count%10 == 3 )Floor[server_protocol_byte_count/100-1].Door2Select=server_protocol_data;
 				if( server_protocol_byte_count%10 == 4 )Floor[server_protocol_byte_count/100-1].Door3Select=server_protocol_data;
 				
+				if( server_protocol_byte_count%10 == 5 )Floor[server_protocol_byte_count/100-1].SegL=server_protocol_data;
+				if( server_protocol_byte_count%10 == 6 )Floor[server_protocol_byte_count/100-1].SegR=server_protocol_data;
+				if( server_protocol_byte_count%10 == 7 )Floor[server_protocol_byte_count/100-1].Talk=server_protocol_data;
+				
 			}
 			else{
 				
@@ -106,6 +110,8 @@ void server_protocol_data_manage(  ){
 				if( server_protocol_byte_count%10 == 4 )data=Floor[server_protocol_byte_count/100-1].Door3Select;
 				
 				if( server_protocol_byte_count%10 == 5 )data=Floor[server_protocol_byte_count/100-1].SegL;
+				if( server_protocol_byte_count%10 == 6 )data=Floor[server_protocol_byte_count/100-1].SegR;
+				if( server_protocol_byte_count%10 == 7 )data=Floor[server_protocol_byte_count/100-1].Talk;
 				
 					char temp[50];
 					buffer_http_send_to_server_index++;
