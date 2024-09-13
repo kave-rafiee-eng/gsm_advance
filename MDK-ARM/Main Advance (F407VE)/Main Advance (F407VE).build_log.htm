@@ -27,7 +27,18 @@ Project File Date:  09/09/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Main Advance (F407VE)'
-../Core/GSM/write_settng.c(62): warning: passing 'char [100]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+../Core/GSM/test.c(68): warning: implicit declaration of function 'server_protocol_json' is invalid in C99 [-Wimplicit-function-declaration]
+                        server_protocol_json();
+                        ^
+../Core/GSM/test.c(97): warning: implicit declaration of function 'write_setting_manage' is invalid in C99 [-Wimplicit-function-declaration]
+                                        write_setting_manage();
+                                        ^
+../Core/GSM/test.c(103): warning: implicit declaration of function 'read_setting_manage' is invalid in C99 [-Wimplicit-function-declaration]
+                                        read_setting_manage();
+                                        ^
+3 warnings generated.
+compiling test.c...
+../Core/GSM/write_settng.c(63): warning: passing 'char [100]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
                                 modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);                                
                                                                                                                    ^~~
 ../Core/Inc/../GSM/modbus/modbus.H(21): note: passing argument to parameter 'data' here
@@ -36,9 +47,9 @@ char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code 
 1 warning generated.
 compiling write_settng.c...
 linking...
-Program Size: Code=67610 RO-data=10246 RW-data=2108 ZI-data=26436  
+Program Size: Code=67990 RO-data=10274 RW-data=2108 ZI-data=26436  
 FromELF: creating hex file...
-"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 1 Warning(s).
+"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -71,10 +82,10 @@ Package Vendor: Keil
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
       Source file:   Source\retarget_io.c
-      Source file:   Template\stdout_user.c
-      Source file:   Template\stdout_USART.c
       Source file:   Template\stdout_display.c
-Build Time Elapsed:  00:00:01
+      Source file:   Template\stdout_USART.c
+      Source file:   Template\stdout_user.c
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

@@ -65,11 +65,8 @@ void test_modbus(){
 					json.document[i] = modbus_slave.buf[i];
 			}
 
-			
-			
 			server_protocol_json();
-			
-			
+					
 	}
 	
 }

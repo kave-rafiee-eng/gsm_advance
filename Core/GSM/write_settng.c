@@ -8,6 +8,7 @@
 #include "../Inc/Serial.h"
 
 extern volatile	uint8_t			Stng[SETTING_ARRAY_SIZE];
+
 extern volatile  uint8_t   	EEPROMSaveFlag;
 extern char List_DoorControlType[][8];
 extern char List_ServiceType[][17];
@@ -74,18 +75,44 @@ extern char buffer_http_send_to_server_index;
 
 void server_protocol_data_manage(  ){
 	
-	if( server_protocol_arreay_select == 0 ){
+	if( server_protocol_arreay_select == 0 ){ // STNG
 
-		if( server_protocol_status == 1 ){
-				Stng[server_protocol_byte_count] = server_protocol_data;
-		}
-		else{
-				char temp[50];
-				buffer_http_send_to_server_index++;
-				char num = buffer_http_send_to_server_index;
-				sprintf(temp,"ar%d=%d&ad%d=%d&da%d=%d&",num,server_protocol_arreay_select,num,server_protocol_byte_count,num,Stng[server_protocol_byte_count]);
-				strcat(buffer_http_send_to_server,temp);
-		}
+			if( server_protocol_status == 1 ){
+					Stng[server_protocol_byte_count] = server_protocol_data;
+			}
+			else{
+					char temp[50];
+					buffer_http_send_to_server_index++;
+					char num = buffer_http_send_to_server_index;
+					sprintf(temp,"ar%d=%d&ad%d=%d&da%d=%d&",num,server_protocol_arreay_select,num,server_protocol_byte_count,num,Stng[server_protocol_byte_count]);
+					strcat(buffer_http_send_to_server,temp);
+			}
+	}
+	if( server_protocol_arreay_select == 1 &&  server_protocol_byte_count>=100 ){ // FLOOR
+
+			if( server_protocol_status == 1 ){
+				
+				if( server_protocol_byte_count%10 == 2 )Floor[server_protocol_byte_count/100-1].Door1Select=server_protocol_data;
+				if( server_protocol_byte_count%10 == 3 )Floor[server_protocol_byte_count/100-1].Door2Select=server_protocol_data;
+				if( server_protocol_byte_count%10 == 4 )Floor[server_protocol_byte_count/100-1].Door3Select=server_protocol_data;
+				
+			}
+			else{
+				
+				int data=0;
+				
+				if( server_protocol_byte_count%10 == 2 )data=Floor[server_protocol_byte_count/100-1].Door1Select;
+				if( server_protocol_byte_count%10 == 3 )data=Floor[server_protocol_byte_count/100-1].Door2Select;
+				if( server_protocol_byte_count%10 == 4 )data=Floor[server_protocol_byte_count/100-1].Door3Select;
+				
+				if( server_protocol_byte_count%10 == 5 )data=Floor[server_protocol_byte_count/100-1].SegL;
+				
+					char temp[50];
+					buffer_http_send_to_server_index++;
+					char num = buffer_http_send_to_server_index;
+					sprintf(temp,"ar%d=%d&ad%d=%d&da%d=%d&",num,server_protocol_arreay_select,num,server_protocol_byte_count,num,data);
+					strcat(buffer_http_send_to_server,temp);
+			}
 	}
 	
 }
