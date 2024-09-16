@@ -79,8 +79,9 @@ void server_protocol_data_manage(  ){
 
 			if( server_protocol_status == 1 ){
 					Stng[server_protocol_byte_count] = server_protocol_data;
+					server_protocol_status=0;
 			}
-			else{
+			if( server_protocol_status == 0 ){
 					char temp[50];
 					buffer_http_send_to_server_index++;
 					char num = buffer_http_send_to_server_index;
@@ -92,26 +93,35 @@ void server_protocol_data_manage(  ){
 
 			if( server_protocol_status == 1 ){
 				
-				if( server_protocol_byte_count%10 == 2 )Floor[server_protocol_byte_count/100-1].Door1Select=server_protocol_data;
-				if( server_protocol_byte_count%10 == 3 )Floor[server_protocol_byte_count/100-1].Door2Select=server_protocol_data;
-				if( server_protocol_byte_count%10 == 4 )Floor[server_protocol_byte_count/100-1].Door3Select=server_protocol_data;
+				if( server_protocol_byte_count%100 == 2 )Floor[server_protocol_byte_count/100-1].Door1Select=server_protocol_data;
+				if( server_protocol_byte_count%100 == 3 )Floor[server_protocol_byte_count/100-1].Door2Select=server_protocol_data;
+				if( server_protocol_byte_count%100 == 4 )Floor[server_protocol_byte_count/100-1].Door3Select=server_protocol_data;
 				
-				if( server_protocol_byte_count%10 == 5 )Floor[server_protocol_byte_count/100-1].SegL=server_protocol_data;
-				if( server_protocol_byte_count%10 == 6 )Floor[server_protocol_byte_count/100-1].SegR=server_protocol_data;
-				if( server_protocol_byte_count%10 == 7 )Floor[server_protocol_byte_count/100-1].Talk=server_protocol_data;
+				if( server_protocol_byte_count%100 == 5 )Floor[server_protocol_byte_count/100-1].SegL=server_protocol_data;
+				if( server_protocol_byte_count%100 == 6 )Floor[server_protocol_byte_count/100-1].SegR=server_protocol_data;
+				if( server_protocol_byte_count%100 == 7 )Floor[server_protocol_byte_count/100-1].Talk=server_protocol_data;
+				if( server_protocol_byte_count%100 == 8 )Floor[server_protocol_byte_count/100-1].Jump1Speed=server_protocol_data;
+				if( server_protocol_byte_count%100 == 9 )Floor[server_protocol_byte_count/100-1].Jump1Flag=server_protocol_data;
+				if( server_protocol_byte_count%100 == 10 )Floor[server_protocol_byte_count/100-1].JumpNFlag=server_protocol_data;				
+				if( server_protocol_byte_count%100 == 11 )Floor[server_protocol_byte_count/100-1].LevelDistance=server_protocol_data;
 				
 			}
 			else{
 				
 				int data=0;
 				
-				if( server_protocol_byte_count%10 == 2 )data=Floor[server_protocol_byte_count/100-1].Door1Select;
-				if( server_protocol_byte_count%10 == 3 )data=Floor[server_protocol_byte_count/100-1].Door2Select;
-				if( server_protocol_byte_count%10 == 4 )data=Floor[server_protocol_byte_count/100-1].Door3Select;
+				if( server_protocol_byte_count%100 == 2 )data=Floor[server_protocol_byte_count/100-1].Door1Select;
+				if( server_protocol_byte_count%100 == 3 )data=Floor[server_protocol_byte_count/100-1].Door2Select;
+				if( server_protocol_byte_count%100 == 4 )data=Floor[server_protocol_byte_count/100-1].Door3Select;
 				
-				if( server_protocol_byte_count%10 == 5 )data=Floor[server_protocol_byte_count/100-1].SegL;
-				if( server_protocol_byte_count%10 == 6 )data=Floor[server_protocol_byte_count/100-1].SegR;
-				if( server_protocol_byte_count%10 == 7 )data=Floor[server_protocol_byte_count/100-1].Talk;
+				if( server_protocol_byte_count%100 == 5 )data=Floor[server_protocol_byte_count/100-1].SegL;
+				if( server_protocol_byte_count%100 == 6 )data=Floor[server_protocol_byte_count/100-1].SegR;
+				if( server_protocol_byte_count%100 == 7 )data=Floor[server_protocol_byte_count/100-1].Talk;
+				if( server_protocol_byte_count%100 == 8 )data=Floor[server_protocol_byte_count/100-1].Jump1Speed;
+				if( server_protocol_byte_count%100 == 9 )data=Floor[server_protocol_byte_count/100-1].Jump1Flag;
+				if( server_protocol_byte_count%100 == 10 )data=Floor[server_protocol_byte_count/100-1].JumpNFlag;
+				
+				if( server_protocol_byte_count%100 == 11 )data=Floor[server_protocol_byte_count/100-1].LevelDistance;
 				
 					char temp[50];
 					buffer_http_send_to_server_index++;
