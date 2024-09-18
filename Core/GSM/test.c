@@ -64,8 +64,17 @@ void test_modbus(){
 			for( int i=0; i< modbus_slave.data_count; i++ ){
 					json.document[i] = modbus_slave.buf[i];
 			}
-
-			server_protocol_json();
+			
+			if( json_get_data(json.document , "\"serial\":") == TYPE_STR ){
+				
+					char str[100];
+					sprintf(str,"{\"serial\":\"100\",}");	
+					modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);		
+				
+			}
+			else{
+				server_protocol_json();
+			}
 					
 	}
 	

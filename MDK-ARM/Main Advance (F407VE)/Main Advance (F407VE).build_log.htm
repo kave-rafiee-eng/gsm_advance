@@ -27,18 +27,27 @@ Project File Date:  09/09/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Main Advance (F407VE)'
-../Core/GSM/write_settng.c(63): warning: passing 'char [100]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-                                modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);                                
-                                                                                                                   ^~~
+../Core/GSM/test.c(72): warning: passing 'char [100]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                        modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);                
+                                                                                                                           ^~~
 ../Core/Inc/../GSM/modbus/modbus.H(21): note: passing argument to parameter 'data' here
 char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code , uint16_t start_addres , uint16_t world_count , uint8_t *data );
                                                                                                                                           ^
-1 warning generated.
-compiling write_settng.c...
+../Core/GSM/test.c(76): warning: implicit declaration of function 'server_protocol_json' is invalid in C99 [-Wimplicit-function-declaration]
+                                server_protocol_json();
+                                ^
+../Core/GSM/test.c(106): warning: implicit declaration of function 'write_setting_manage' is invalid in C99 [-Wimplicit-function-declaration]
+                                        write_setting_manage();
+                                        ^
+../Core/GSM/test.c(112): warning: implicit declaration of function 'read_setting_manage' is invalid in C99 [-Wimplicit-function-declaration]
+                                        read_setting_manage();
+                                        ^
+4 warnings generated.
+compiling test.c...
 linking...
-Program Size: Code=68266 RO-data=10274 RW-data=2108 ZI-data=26436  
+Program Size: Code=68350 RO-data=10294 RW-data=2108 ZI-data=26436  
 FromELF: creating hex file...
-"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 1 Warning(s).
+"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -70,11 +79,11 @@ Package Vendor: Keil
       Include file:  CMSIS\Core\Include\tz_context.h
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
-      Source file:   Source\retarget_io.c
       Source file:   Template\stdout_display.c
       Source file:   Template\stdout_USART.c
+      Source file:   Source\retarget_io.c
       Source file:   Template\stdout_user.c
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
