@@ -47,7 +47,7 @@ void test_modbus(){
 	if ( i_get > 0 )tbr_g1[tbr_g1_TEST].EN=1;
 	else tbr_g1[tbr_g1_TEST].EN=0;
 	
-	tbr_g1[tbr_g1_TEST].C_set_time=20;
+	tbr_g1[tbr_g1_TEST].C_set_time=5;
 	
 	if( tbr_g1[tbr_g1_TEST].F_end ){ tbr_g1[tbr_g1_TEST].F_end=0;
 		if( i_get > 0 ){
@@ -67,14 +67,16 @@ void test_modbus(){
 			
 			if( json_get_data(json.document , "\"serial\":") == TYPE_STR ){
 				
-					char str[100];
+					/*char str[100];
 					sprintf(str,"{\"serial\":\"100\",}");	
-					modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);		
+					modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(str),str);*/
+				server_protocol_json();
 				
 			}
 			else{
 				server_protocol_json();
 			}
+			
 					
 	}
 	

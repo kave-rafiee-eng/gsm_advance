@@ -679,8 +679,8 @@ void UART4_Init(void)	//For Hall
 	
 	RCC->APB1ENR |= RCC_APB1ENR_UART4EN;    // enable USART4 clock
 
-	//UART4->BRR   = 0x016C;                  // 115200 baud @ APB1_CLK == 42MHz
-	UART4->BRR   = 0x1117;                  // 9600 baud @ APB1_CLK == 42MHz
+	UART4->BRR   = 0x016C;                  // 115200 baud @ APB1_CLK == 42MHz
+	//UART4->BRR   = 0x1117;                  // 9600 baud @ APB1_CLK == 42MHz
 	UART4->CR1   = 0;                       // Clear Control Register 1
 	UART4->CR1   = USART_CR1_TE  | USART_CR1_RE;     // enable TX & RX
 

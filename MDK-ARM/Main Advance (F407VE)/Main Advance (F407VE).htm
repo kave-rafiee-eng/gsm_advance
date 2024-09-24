@@ -3,9 +3,9 @@
 <title>Static Call Graph - [Main Advance (F407VE)\Main Advance (F407VE).axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Main Advance (F407VE)\Main Advance (F407VE).axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue Sep 17 03:31:02 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue Sep 24 04:15:12 2024
 <BR><P>
-<H3>Maximum Stack Usage =        472 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        440 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; test_modbus &rArr; server_protocol_json &rArr; server_protocol_data_manage &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 <P>
@@ -304,7 +304,7 @@ Global Symbols
 <P><STRONG><a name="[187]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[7a]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 472 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 440 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; test_modbus &rArr; server_protocol_json &rArr; server_protocol_data_manage &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -587,6 +587,7 @@ Global Symbols
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Menu
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;server_protocol_data_manage
+<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;server_protocol_json
 </UL>
 
 <P><STRONG><a name="[84]"></a>_printf_pre_padding</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, _printf_pad.o(.text))
@@ -641,7 +642,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtol
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_get_data
+<BR>[Called By]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;server_protocol_json
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_get_data
 </UL>
 
 <P><STRONG><a name="[14a]"></a>strstr</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, strstr.o(.text))
@@ -956,8 +958,8 @@ Global Symbols
 <P><STRONG><a name="[143]"></a>CRC_16</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, crc.o(.text.CRC_16))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CRC_16
 </UL>
-<BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_slave_manage
-<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_master_write_register_MULTI
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_master_write_register_MULTI
+<LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_slave_manage
 </UL>
 
 <P><STRONG><a name="[13a]"></a>CalculatePBNumber</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, pb_num.o(.text.CalculatePBNumber))
@@ -1955,7 +1957,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_get_data
 </UL>
 
-<P><STRONG><a name="[137]"></a>json_get_data</STRONG> (Thumb, 164 bytes, Stack size 24 bytes, json.o(.text.json_get_data))
+<P><STRONG><a name="[137]"></a>json_get_data</STRONG> (Thumb, 172 bytes, Stack size 24 bytes, json.o(.text.json_get_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = json_get_data &rArr; atoi &rArr; strtol &rArr; _strtoul
 </UL>
@@ -1969,7 +1971,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7b]"></a>main</STRONG> (Thumb, 4312 bytes, Stack size 104 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 472 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 440 + Unknown Stack Size
 <LI>Call Chain = main &rArr; test_modbus &rArr; server_protocol_json &rArr; server_protocol_data_manage &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;test_modbus
@@ -2062,8 +2064,7 @@ Global Symbols
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRC_16
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;test_modbus
-<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;server_protocol_json
+<BR>[Called By]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;server_protocol_json
 </UL>
 
 <P><STRONG><a name="[145]"></a>modbus_slave_manage</STRONG> (Thumb, 288 bytes, Stack size 24 bytes, modbus.o(.text.modbus_slave_manage))
@@ -2074,7 +2075,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;test_modbus
 </UL>
 
-<P><STRONG><a name="[146]"></a>server_protocol_data_manage</STRONG> (Thumb, 826 bytes, Stack size 88 bytes, write_settng.o(.text.server_protocol_data_manage))
+<P><STRONG><a name="[146]"></a>server_protocol_data_manage</STRONG> (Thumb, 838 bytes, Stack size 88 bytes, write_settng.o(.text.server_protocol_data_manage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224 + Unknown Stack Size
 <LI>Call Chain = server_protocol_data_manage &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -2084,12 +2085,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;server_protocol_json
 </UL>
 
-<P><STRONG><a name="[148]"></a>server_protocol_json</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, json.o(.text.server_protocol_json))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248 + Unknown Stack Size
+<P><STRONG><a name="[148]"></a>server_protocol_json</STRONG> (Thumb, 480 bytes, Stack size 96 bytes, json.o(.text.server_protocol_json))
+<BR><BR>[Stack]<UL><LI>Max Depth = 320 + Unknown Stack Size
 <LI>Call Chain = server_protocol_json &rArr; server_protocol_data_manage &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;server_protocol_data_manage
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_master_write_register_MULTI
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_get_data
@@ -2118,15 +2121,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_find
 </UL>
 
-<P><STRONG><a name="[13d]"></a>test_modbus</STRONG> (Thumb, 276 bytes, Stack size 120 bytes, test.o(.text.test_modbus))
-<BR><BR>[Stack]<UL><LI>Max Depth = 368 + Unknown Stack Size
+<P><STRONG><a name="[13d]"></a>test_modbus</STRONG> (Thumb, 216 bytes, Stack size 16 bytes, test.o(.text.test_modbus))
+<BR><BR>[Stack]<UL><LI>Max Depth = 336 + Unknown Stack Size
 <LI>Call Chain = test_modbus &rArr; server_protocol_json &rArr; server_protocol_data_manage &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;server_protocol_json
 <LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_slave_manage
-<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_master_write_register_MULTI
 <LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_get_data_dma
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_get_data
 </UL>

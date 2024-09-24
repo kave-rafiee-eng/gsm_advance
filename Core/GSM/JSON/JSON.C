@@ -1,7 +1,6 @@
 #include "main.h"
 #include "stdio.h"
 #include "stdlib.h"
-#include "string.h"
 #include "json.h"
 
 #include "../Inc/Variable.h"
@@ -31,7 +30,6 @@ char json_get_data( char *buffer , char *command ){
     
 		//strcpy( json.str_data , "");
 		memset(json.str_data,0,strlen(json.str_data));
-	
     
     ad = json_find(buffer,command);
 	
@@ -40,9 +38,10 @@ char json_get_data( char *buffer , char *command ){
     char i=0;
     if( buffer[ad] == '"' ){
         while( buffer[ad+1+i] != ',' && buffer[ad+1+i] != '"' ){
-    		json.str_data[i] = buffer[ad+i+1];
-    		i++;
-    	}
+					json.str_data[i] = buffer[ad+i+1];
+					i++;
+				}
+				json.str_data[i]='\n';
         return 1;        
     }
     else{
@@ -151,26 +150,47 @@ void server_protocol_json(){
 	memset(buffer_http_send_to_server,0,200);
 	buffer_http_send_to_server_index=0;
 	
-	if( json_get_data(json.document , "\"ar1\":") == TYPE_WORD ){
-		server_protocol_arreay_select = json.data;				
-		if( json_get_data(json.document , "\"ad1\":") == TYPE_WORD ){
-			server_protocol_byte_count = json.data;
-			if( json_get_data(json.document , "\"da1\":") == TYPE_WORD ){
-				server_protocol_data = json.data;	
-				if( json_get_data(json.document , "\"st1\":") == TYPE_WORD ){
-					server_protocol_status = json.data;
-					
-					memset(buffer_http_send_to_server,0,200);
-					sprintf(buffer_http_send_to_server,"{\"serial\":\"100\",\"url\":\"");
-					server_protocol_data_manage();
-					strcat(buffer_http_send_to_server,"\"}");			
-					modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(buffer_http_send_to_server),buffer_http_send_to_server);
-					
-					
-				}
-			}
-		}	
-	}	
+	memset(buffer_http_send_to_server,0,200);
+	sprintf(buffer_http_send_to_server,"{\"serial\":\"100\"");
+	
+	for( char n=0; n<10; n++){
+		
+			char str_cmp[50];
+			sprintf(str_cmp,"\"ar%d\":",n);
+			if( json_get_data(json.document , str_cmp)  > 0 ){
+				if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol_arreay_select = atoi(json.str_data);
+				if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol_arreay_select = json.data;
+
+				sprintf(str_cmp,"\"ad%d\":",n);	
+				if( json_get_data(json.document , str_cmp) > 0 ){
+					if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol_byte_count = atoi(json.str_data);
+					if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol_byte_count = json.data;			
+
+					sprintf(str_cmp,"\"da%d\":",n);	
+					if( json_get_data(json.document , str_cmp) > 0 ){
+						if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol_data = atoi(json.str_data);
+						if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol_data = json.data;		
+
+						sprintf(str_cmp,"\"st%d\":",n);	
+						if( json_get_data(json.document , str_cmp) > 0){
+							if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol_status = atoi(json.str_data);
+							if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol_status = json.data;		
+								
+								
+								server_protocol_data_manage();
+			
+						}
+					}
+				}	
+			}		
+	}
+
+
+
+	strcat(buffer_http_send_to_server,"}");		
+	modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(buffer_http_send_to_server),buffer_http_send_to_server);
+	
+		
 }
 
 

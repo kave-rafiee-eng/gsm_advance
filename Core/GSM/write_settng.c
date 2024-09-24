@@ -85,7 +85,8 @@ void server_protocol_data_manage(  ){
 					char temp[50];
 					buffer_http_send_to_server_index++;
 					char num = buffer_http_send_to_server_index;
-					sprintf(temp,"ar%d=%d&ad%d=%d&da%d=%d&",num,server_protocol_arreay_select,num,server_protocol_byte_count,num,Stng[server_protocol_byte_count]);
+					
+					sprintf(temp,",\"ar%d\":\"%d\",\"ad%d\":\"%d\",\"da%d\":\"%d\"",num,server_protocol_arreay_select,num,server_protocol_byte_count,num,Stng[server_protocol_byte_count]);
 					strcat(buffer_http_send_to_server,temp);
 			}
 	}
@@ -104,9 +105,9 @@ void server_protocol_data_manage(  ){
 				if( server_protocol_byte_count%100 == 9 )Floor[server_protocol_byte_count/100-1].Jump1Flag=server_protocol_data;
 				if( server_protocol_byte_count%100 == 10 )Floor[server_protocol_byte_count/100-1].JumpNFlag=server_protocol_data;				
 				if( server_protocol_byte_count%100 == 11 )Floor[server_protocol_byte_count/100-1].LevelDistance=server_protocol_data;
-				
+				server_protocol_status=0;
 			}
-			else{
+			if( server_protocol_status == 0 ){
 				
 				int data=0;
 				
@@ -126,7 +127,7 @@ void server_protocol_data_manage(  ){
 					char temp[50];
 					buffer_http_send_to_server_index++;
 					char num = buffer_http_send_to_server_index;
-					sprintf(temp,"ar%d=%d&ad%d=%d&da%d=%d&",num,server_protocol_arreay_select,num,server_protocol_byte_count,num,data);
+					sprintf(temp,",\"ar%d\":\"%d\",\"ad%d\":\"%d\",\"da%d\":\"%d\"",num,server_protocol_arreay_select,num,server_protocol_byte_count,num,data);
 					strcat(buffer_http_send_to_server,temp);
 			}
 	}

@@ -41,7 +41,6 @@ main\ advance\ (f407ve)/json.o: ..\Core\GSM\JSON\JSON.C \
   ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\..\GSM\setting_adress.H \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   ..\Core\GSM\JSON\json.h ..\Core\Inc\..\Inc\Variable.h \
   ..\Core\Inc\main.h ..\Core\Inc\n1202.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\Core\Inc\font.h \
