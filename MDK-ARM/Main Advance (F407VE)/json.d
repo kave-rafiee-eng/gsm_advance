@@ -39,6 +39,9 @@ main\ advance\ (f407ve)/json.o: ..\Core\GSM\JSON\JSON.C \
   ..\Core\Inc\..\GSM\SOFT_WARE_TIMER\CPU_TIMER.H \
   ..\Core\Inc\..\GSM\JSON\JSON.H ..\Core\Inc\..\GSM\modbus\modbus.H \
   ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\..\GSM\setting_adress.H \
+  ..\Core\Inc\..\SHASI\modbus_rtu_8bit.H \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ..\Core\Inc\..\SHASI\shasi.H \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\Core\GSM\JSON\json.h ..\Core\Inc\..\Inc\Variable.h \
@@ -46,5 +49,4 @@ main\ advance\ (f407ve)/json.o: ..\Core\GSM\JSON\JSON.C \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\Core\Inc\font.h \
   ..\Core\Inc\Hardware.h ..\Core\Inc\Defines.h ..\Core\Inc\Serial.h \
   ..\Core\Inc\EEPROM.h ..\Core\Inc\Menu.h ..\Core\Inc\AT24Cxx.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h ..\Core\Inc\PB_Num.h \
-  ..\Core\Inc\..\Inc\Serial.h
+  ..\Core\Inc\PB_Num.h ..\Core\Inc\..\Inc\Serial.h

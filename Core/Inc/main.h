@@ -37,6 +37,8 @@ extern "C" {
 
 #include "../GSM/setting_adress.H"
 
+#include "../SHASI/modbus_rtu_8bit.H"
+#include "../SHASI/shasi.H"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

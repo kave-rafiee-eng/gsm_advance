@@ -40,5 +40,8 @@ main\ advance\ (f407ve)/modbus_master.o: \
   ..\Core\Inc\..\GSM\SOFT_WARE_TIMER\CPU_TIMER.H \
   ..\Core\Inc\..\GSM\JSON\JSON.H ..\Core\Inc\..\GSM\modbus\modbus.H \
   ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\..\GSM\setting_adress.H \
-  ..\Core\GSM\modbus\modbus.h ..\Core\Inc\..\Inc\Hardware.h \
-  ..\Core\Inc\main.h
+  ..\Core\Inc\..\SHASI\modbus_rtu_8bit.H \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ..\Core\Inc\..\SHASI\shasi.H ..\Core\GSM\modbus\modbus.h \
+  ..\Core\Inc\..\Inc\Hardware.h ..\Core\Inc\main.h \
+  ..\Core\GSM\modbus\..\gsm.h

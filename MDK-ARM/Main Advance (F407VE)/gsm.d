@@ -1,5 +1,4 @@
-main\ advance\ (f407ve)/cpu_timer.o: \
-  ..\Core\GSM\SOFT_WARE_TIMER\CPU_TIMER.C ..\Core\Inc\main.h \
+main\ advance\ (f407ve)/gsm.o: ..\Core\GSM\gsm.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -42,4 +41,12 @@ main\ advance\ (f407ve)/cpu_timer.o: \
   ..\Core\Inc\..\GSM\modbus\CRC.H ..\Core\Inc\..\GSM\setting_adress.H \
   ..\Core\Inc\..\SHASI\modbus_rtu_8bit.H \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  ..\Core\Inc\..\SHASI\shasi.H ..\Core\GSM\SOFT_WARE_TIMER\cpu_timer.h
+  ..\Core\Inc\..\SHASI\shasi.H \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h ..\Core\GSM\gsm.h \
+  ..\Core\GSM\..\Inc\Variable.h ..\Core\Inc\main.h ..\Core\Inc\n1202.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\Core\Inc\font.h \
+  ..\Core\Inc\Hardware.h ..\Core\Inc\Defines.h ..\Core\Inc\Serial.h \
+  ..\Core\Inc\EEPROM.h ..\Core\Inc\Menu.h ..\Core\Inc\AT24Cxx.h \
+  ..\Core\Inc\PB_Num.h ..\Core\GSM\..\Inc\Serial.h

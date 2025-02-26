@@ -7,174 +7,115 @@
 #include "../Inc/Serial.h"
 
 struct JSON_OUT	 json;
-struct JSON_PROTOCOL json_protocol;
 
-int strfind(char *str,char *substr){
-	int ad = strstr(str,substr)  - (char *)&str[0];
-	if( ad >= 0 )return ad;
-	return -1;
+// Find substring position
+int strfind(char *str, char *substr) {
+    char *pos = strstr(str, substr);
+    return (pos) ? (pos - str) : -1;
 }
 
-int json_find(char *buffer_uart,char *command){
-	
-	if( strfind(buffer_uart,command) >= 0 ){
-		int ad = strfind(buffer_uart,(char *)command);
-		return ad+strlen((char *)command);
-	}
-	return -1;
+
+// Locate a JSON field in the buffer
+int json_find(char *buffer_uart, char *command) {
+    int pos = strfind(buffer_uart, command);
+    return (pos >= 0) ? pos + strlen(command) : -1;
 }
 
-char num[10];
-int ad =0;
-char json_get_data( char *buffer , char *command ){
-    
-		//strcpy( json.str_data , "");
-		memset(json.str_data,0,strlen(json.str_data));
-    
-    ad = json_find(buffer,command);
-	
-		if( ad == -1 )return 0;
-    
-    char i=0;
-    if( buffer[ad] == '"' ){
-        while( buffer[ad+1+i] != ',' && buffer[ad+1+i] != '"' ){
-					json.str_data[i] = buffer[ad+i+1];
-					i++;
-				}
-				json.str_data[i]='\n';
-        return 1;        
+// Extract data from JSON buffer
+char json_get_data(char *buffer, char *command) {
+    memset(json.str_data, 0, sizeof(json.str_data));
+
+    int ad = json_find(buffer, command);
+    if (ad == -1) return 0;
+
+    char i = 0;
+    if (buffer[ad] == '"') {  
+        while (buffer[ad + 1 + i] != ',' && buffer[ad + 1 + i] != '"' && i < sizeof(json.str_data) - 1) {
+            json.str_data[i] = buffer[ad + i + 1];
+            i++;
+        }
+        json.str_data[i] = '\0';  // Ensure string termination
+        return TYPE_STR;
+    } else {
+        char num[10] = {0};
+        while (buffer[ad + i] != ',' && buffer[ad + i] != '}' && i < sizeof(num) - 1) {
+            num[i] = buffer[ad + i];
+            i++;
+        }
+        json.data = atoi(num);
+        return TYPE_WORD;
     }
-    else{
-        memset(num,0,10);
-        while( buffer[ad+i] != ',' &&  buffer[ad+i] != '}' ){
-            
-    		num[i] = buffer[ad+i];
-    		i++;
-					if(i>5)return 0;
-    	}
-    	json.data = atoi(num);
-    	return 2;
-    }
-		
-		return 0;
+    return 0;
+}
+
+// Reset JSON protocol variables
+void reset_json() {
+    memset(json.document, 0, sizeof(json.document));
 }
 
 
-void read_protocol_json(){
-	
-	if( json_get_data(json.document , "\"t1\":") == TYPE_WORD ){
-		strcpy( json_protocol.name_w1 , "");
-		strcpy( json_protocol.name_w1 , json.str_data);
-						
-		if( json_get_data(json.document , "\"data_w1\":") == TYPE_STR ){
-			strcpy( json_protocol.data_w1 , "");
-			strcpy( json_protocol.data_w1 , json.str_data);
-			json_protocol.data_w1_type = TYPE_STR;
-		}
-		else if( json_get_data(json.document , "\"data_w1\":") == TYPE_WORD ){
-			json_protocol.data_w1_word = json.data;
-			json_protocol.data_w1_type = TYPE_WORD;
-		}    
-	}
-	
-	
-	if( json_get_data(json.document , "\"name_r1\":") == TYPE_STR ){
-		strcpy( json_protocol.name_r1 , "");
-		strcpy( json_protocol.name_r1 , json.str_data);
-						
-		if( json_get_data(json.document , "\"data_r1\":") == TYPE_STR ){
-			strcpy( json_protocol.data_r1 , "");
-			strcpy( json_protocol.data_r1 , json.str_data);
-			json_protocol.data_r1_type = TYPE_STR;
-		}
-		else if( json_get_data(json.document , "\"data_r1\":") == TYPE_WORD ){
-			json_protocol.data_r1_word = json.data;
-			json_protocol.data_r1_type = TYPE_WORD;
-		}    
-	}
+// Read JSON data from DMA buffer
+void json_get_data_dma() {
+    strncpy(json.document, (const char *)HALL_RX_Buffer, sizeof(json.document) - 1);
+    json.document[sizeof(json.document) - 1] = '\0';
 
+    // Reset DMA
+    DMA1_Stream2->CR = 0;
+    DMA1_Stream2->NDTR = UART_BUFFER_SIZE;
+    memset(HALL_RX_Buffer, 0, UART_BUFFER_SIZE);
+    DMA1_Stream2_Init();
 }
 
-void reset_json(){
-	
-	json_protocol.data_r1_type=0;
-	json_protocol.data_w1_type=0;
-	json_protocol.data_r1_word=0;
-	json_protocol.data_w1_word=0;
-	
-	memset( json_protocol.data_r1 ,0,strlen(json_protocol.data_r1));
-	memset( json_protocol.data_w1 ,0,strlen(json_protocol.data_w1));
-	
-	memset( json_protocol.name_w1 ,0,strlen(json_protocol.name_w1));
-	memset( json_protocol.name_r1 ,0,strlen(json_protocol.name_r1));
-	
-	memset( json.document ,0,strlen(json.document));
-	
-}
 
-void json_get_data_dma(){
-	
-	strcpy( json.document ,"");
-	strcpy(json.document,(const char*)HALL_RX_Buffer);
-	//puts(json.document);
-			
-	//strcpy(HALL_RX_Buffer,"");
-					
-	DMA1_Stream2->CR  = 0; 
-	DMA1_Stream2->NDTR = UART_BUFFER_SIZE;
-	memset(HALL_RX_Buffer,0,UART_BUFFER_SIZE);
-	DMA1_Stream2_Init();
-	
-}
-
+// Replace a character in a string
 int replacechar(char *str, char orig, char rep) {
     char *ix = str;
-    int n = 0;
-    while((ix = strchr(ix, orig)) != NULL) {
+    int count = 0;
+    while ((ix = strchr(ix, orig)) != NULL) {
         *ix++ = rep;
-        n++;
+        count++;
     }
-    return n;
+    return count;
 }
 
-int server_protocol_arreay_select;
-int server_protocol_byte_count;
-int server_protocol_data;
-int server_protocol_status;
+
+
+// Declare a variable of type ServerProtocol
+ServerProtocol server_protocol;
 
 char buffer_http_send_to_server[200];
 char buffer_http_send_to_server_index=0;
-
+	
+// Process server protocol JSON
 void server_protocol_json(){
 	
-	memset(buffer_http_send_to_server,0,200);
 	buffer_http_send_to_server_index=0;
 	
-	memset(buffer_http_send_to_server,0,200);
-	sprintf(buffer_http_send_to_server,"{\"serial\":\"100\"");
+  memset(buffer_http_send_to_server, 0, sizeof(buffer_http_send_to_server));
+  snprintf(buffer_http_send_to_server, sizeof(buffer_http_send_to_server), "{\"serial\":\"100\"");
 	
 	for( char n=0; n<10; n++){
 		
 			char str_cmp[50];
 			sprintf(str_cmp,"\"ar%d\":",n);
 			if( json_get_data(json.document , str_cmp)  > 0 ){
-				if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol_arreay_select = atoi(json.str_data);
-				if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol_arreay_select = json.data;
+				if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol.array_select = atoi(json.str_data);
+				if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol.array_select = json.data;
 
 				sprintf(str_cmp,"\"ad%d\":",n);	
 				if( json_get_data(json.document , str_cmp) > 0 ){
-					if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol_byte_count = atoi(json.str_data);
-					if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol_byte_count = json.data;			
+					if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol.byte_count = atoi(json.str_data);
+					if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol.byte_count = json.data;			
 
 					sprintf(str_cmp,"\"da%d\":",n);	
 					if( json_get_data(json.document , str_cmp) > 0 ){
-						if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol_data = atoi(json.str_data);
-						if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol_data = json.data;		
+						if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol.data = atoi(json.str_data);
+						if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol.data = json.data;		
 
 						sprintf(str_cmp,"\"st%d\":",n);	
 						if( json_get_data(json.document , str_cmp) > 0){
-							if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol_status = atoi(json.str_data);
-							if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol_status = json.data;		
+							if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol.status = atoi(json.str_data);
+							if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol.status = json.data;		
 								
 								
 								server_protocol_data_manage();
@@ -185,33 +126,11 @@ void server_protocol_json(){
 			}		
 	}
 
-
-
 	strcat(buffer_http_send_to_server,"}");		
-	modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(buffer_http_send_to_server),buffer_http_send_to_server);
-	
+	modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(buffer_http_send_to_server),buffer_http_send_to_server);	
 		
 }
 
-
-/*
-
-	if( json_get_data(json.document , "\"t1\":") == TYPE_WORD ){
-		strcpy( json_protocol.name_w1 , "");
-		strcpy( json_protocol.name_w1 , json.str_data);
-						
-		if( json_get_data(json.document , "\"data_w1\":") == TYPE_STR ){
-			strcpy( json_protocol.data_w1 , "");
-			strcpy( json_protocol.data_w1 , json.str_data);
-			json_protocol.data_w1_type = TYPE_STR;
-		}
-		else if( json_get_data(json.document , "\"data_w1\":") == TYPE_WORD ){
-			json_protocol.data_w1_word = json.data;
-			json_protocol.data_w1_type = TYPE_WORD;
-		} 
-
-
-*/
 
 
 

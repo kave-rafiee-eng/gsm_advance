@@ -7,13 +7,15 @@
 #define TYPE_STR 1
 #define TYPE_WORD 2
 
+void server_protocol_json();
+
 int strfind(char *str,char *substr);
 int json_find(char *buffer_uart,char *command);
 char json_get_data( char *buffer , char *command );
-void json_get_data_dma();
-void read_protocol_json();
 void reset_json();
+void json_get_data_dma();
 int replacechar(char *str, char orig, char rep);
+void server_protocol_json();
 
 struct JSON_OUT 
 {
@@ -22,20 +24,14 @@ struct JSON_OUT
 	int data;
 };
 
-struct JSON_PROTOCOL 
-{
-	char name_w1[50];
-  char data_w1[50];
-	int data_w1_word;
-	
-	char data_w1_type : 3;
-	
-	char name_r1[50];
-  char data_r1[50];
-	int data_r1_word;
-	
-	char data_r1_type : 3;
-	
-};
+
+// Structure to manage server protocol status
+typedef struct {
+    int array_select;      // server_protocol_arreay_select
+    int byte_count;        // server_protocol_byte_count
+    int data;              // server_protocol_data
+    int status;            // server_protocol_status
+} ServerProtocol;
+
 
 #endif /* __JSON_H */

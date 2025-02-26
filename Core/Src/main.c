@@ -1787,10 +1787,7 @@ int main(void)
 	while (1)
   {
 		
-
-		//test();
-		
-		test_modbus();
+		GSM_Processing();
 		
 		WDT_RESET;
 		Clear_UART_Errors();

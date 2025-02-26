@@ -4,6 +4,8 @@
 //-------------------------------------------CPU_TIMER
 
 #define tbr_g1_TEST 0 
+#define tbr_g1_TEST_SHASI 1 
+#define tbr_g1_SHASI_RS485_GET 2 
 
 //-------------------------------------------SEC
 #define tbrc_s1_DISPLAY_SHOW_MODE 1 

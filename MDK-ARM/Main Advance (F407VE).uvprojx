@@ -579,11 +579,6 @@
           <GroupName>GSM</GroupName>
           <Files>
             <File>
-              <FileName>test.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\GSM\test.c</FilePath>
-            </File>
-            <File>
               <FileName>CPU_TIMER.C</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\GSM\SOFT_WARE_TIMER\CPU_TIMER.C</FilePath>
@@ -609,14 +604,29 @@
               <FilePath>..\Core\GSM\modbus\modbus_master.c</FilePath>
             </File>
             <File>
-              <FileName>read_setting.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\GSM\read_setting.c</FilePath>
-            </File>
-            <File>
               <FileName>write_settng.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\GSM\write_settng.c</FilePath>
+            </File>
+            <File>
+              <FileName>gsm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\GSM\gsm.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SHASI</GroupName>
+          <Files>
+            <File>
+              <FileName>modbus_rtu_8bit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\SHASI\modbus_rtu_8bit.c</FilePath>
+            </File>
+            <File>
+              <FileName>shasi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\SHASI\shasi.c</FilePath>
             </File>
           </Files>
         </Group>
