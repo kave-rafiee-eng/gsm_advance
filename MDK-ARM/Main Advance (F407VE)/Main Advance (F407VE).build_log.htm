@@ -26,185 +26,7 @@ Project File Date:  02/26/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Main Advance (F407VE)'
-assembling startup_stm32f407xx.s...
-../Core/Src/stm32f4xx_it.c(28): warning: In file included from...
-../Core/Inc\Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-1 warning generated.
-compiling stm32f4xx_it.c...
-compiling stm32f4xx_hal_msp.c...
-compiling AT24Cxx.c...
-../Core/Src/main.c(29): warning: In file included from...
-../Core/Inc\Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-../Core/Src/main.c(1777): warning: implicit declaration of function 'gsm_init' is invalid in C99 [-Wimplicit-function-declaration]
-        gsm_init();
-        ^
-../Core/Src/main.c(1790): warning: implicit declaration of function 'GSM_Processing' is invalid in C99 [-Wimplicit-function-declaration]
-                GSM_Processing();
-                ^
-3 warnings generated.
-compiling main.c...
-../Core/Src/EEPROM.c(8): warning: In file included from...
-../Core/Inc\Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-1 warning generated.
-compiling EEPROM.c...
-../Core/Src/Hardware.c(5): warning: In file included from...
-../Core/Inc\Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-1 warning generated.
-compiling Hardware.c...
-compiling n1202.c...
-../Core/Src/PB_Num.c(7): warning: In file included from...
-../Core/Inc\Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-1 warning generated.
-compiling PB_Num.c...
-../Core/Src/Variable.c(5): warning: In file included from...
-../Core/Inc\Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-1 warning generated.
-compiling Variable.c...
-../Core/Src/Serial.c(3): warning: In file included from...
-../Core/Inc\Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-1 warning generated.
-compiling Serial.c...
-compiling stdout_user.c...
-../Core/Src/Menu.c(8): warning: In file included from...
-../Core/Inc\Variable.h(9): warning: In file included from...
-../Core/Inc/Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-1 warning generated.
-compiling Menu.c...
-compiling stm32f4xx_hal_adc.c...
-compiling stm32f4xx_hal_adc_ex.c...
-compiling stm32f4xx_ll_adc.c...
-compiling stm32f4xx_hal_rcc.c...
-compiling stm32f4xx_hal_rcc_ex.c...
-compiling stm32f4xx_hal_flash.c...
-compiling stm32f4xx_hal_flash_ex.c...
-compiling stm32f4xx_hal_flash_ramfunc.c...
-compiling stm32f4xx_hal_gpio.c...
-compiling stm32f4xx_hal_dma_ex.c...
-compiling stm32f4xx_hal_pwr.c...
-compiling stm32f4xx_hal_dma.c...
-compiling stm32f4xx_hal_pwr_ex.c...
-compiling stm32f4xx_hal.c...
-compiling stm32f4xx_hal_cortex.c...
-compiling stm32f4xx_hal_exti.c...
-compiling stm32f4xx_hal_i2c_ex.c...
-compiling stm32f4xx_hal_iwdg.c...
-compiling stm32f4xx_hal_tim_ex.c...
-compiling stm32f4xx_hal_i2c.c...
-compiling system_stm32f4xx.c...
-compiling stm32f4xx_hal_tim.c...
-compiling CPU_TIMER.C...
-compiling CRC.C...
-../Core/GSM/JSON/JSON.C(6): warning: In file included from...
-../Core/Inc\../Inc/Variable.h(9): warning: In file included from...
-../Core/Inc/Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-../Core/GSM/JSON/JSON.C(13): warning: implicitly declaring library function 'strstr' with type 'char *(const char *, const char *)' [-Wimplicit-function-declaration]
-    char *pos = strstr(str, substr);
-                ^
-../Core/GSM/JSON/JSON.C(13): note: include the header <string.h> or explicitly provide a declaration for 'strstr'
-../Core/GSM/JSON/JSON.C(21): warning: implicitly declaring library function 'strlen' with type 'unsigned int (const char *)' [-Wimplicit-function-declaration]
-    return (pos >= 0) ? pos + strlen(command) : -1;
-                              ^
-../Core/GSM/JSON/JSON.C(21): note: include the header <string.h> or explicitly provide a declaration for 'strlen'
-../Core/GSM/JSON/JSON.C(26): warning: implicitly declaring library function 'memset' with type 'void *(void *, int, unsigned int)' [-Wimplicit-function-declaration]
-    memset(json.str_data, 0, sizeof(json.str_data));
-    ^
-../Core/GSM/JSON/JSON.C(26): note: include the header <string.h> or explicitly provide a declaration for 'memset'
-../Core/GSM/JSON/JSON.C(59): warning: implicitly declaring library function 'strncpy' with type 'char *(char *, const char *, unsigned int)' [-Wimplicit-function-declaration]
-    strncpy(json.document, (const char *)HALL_RX_Buffer, sizeof(json.document) - 1);
-    ^
-../Core/GSM/JSON/JSON.C(59): note: include the header <string.h> or explicitly provide a declaration for 'strncpy'
-../Core/GSM/JSON/JSON.C(65): warning: passing 'volatile char [300]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-    memset(HALL_RX_Buffer, 0, UART_BUFFER_SIZE);
-           ^~~~~~~~~~~~~~
-../Core/GSM/JSON/JSON.C(74): warning: implicitly declaring library function 'strchr' with type 'char *(const char *, int)' [-Wimplicit-function-declaration]
-    while ((ix = strchr(ix, orig)) != NULL) {
-                 ^
-../Core/GSM/JSON/JSON.C(74): note: include the header <string.h> or explicitly provide a declaration for 'strchr'
-../Core/GSM/JSON/JSON.C(121): warning: implicit declaration of function 'server_protocol_data_manage' is invalid in C99 [-Wimplicit-function-declaration]
-                                                                server_protocol_data_manage();
-                                                                ^
-../Core/GSM/JSON/JSON.C(129): warning: implicitly declaring library function 'strcat' with type 'char *(char *, const char *)' [-Wimplicit-function-declaration]
-        strcat(buffer_http_send_to_server,"}");         
-        ^
-../Core/GSM/JSON/JSON.C(129): note: include the header <string.h> or explicitly provide a declaration for 'strcat'
-../Core/GSM/JSON/JSON.C(130): warning: passing 'char [200]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-        modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(buffer_http_send_to_server),buffer_http_send_to_server);  
-                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Inc/../GSM/modbus/modbus.H(13): note: passing argument to parameter 'data' here
-char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code , uint16_t start_addres , uint16_t world_count , uint8_t *data );
-                                                                                                                                          ^
-10 warnings generated.
-compiling JSON.C...
-../Core/GSM/modbus/modbus.c(7): warning: In file included from...
-../Core/Inc\../Inc/Variable.h(9): warning: In file included from...
-../Core/Inc/Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-../Core/GSM/modbus/modbus.c(32): warning: passing 'volatile uint8_t [200]' to parameter of type 'unsigned char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        slave_crc_calculate = CRC_16(modbus.buf_rx, 6 + slave_data_count);
-                                     ^~~~~~~~~~~~~
-../Core/Inc/../GSM/modbus/CRC.H(6): note: passing argument to parameter 'buf' here
-unsigned int CRC_16( unsigned char *buf,int len );
-                                    ^
-../Core/GSM/modbus/modbus.c(48): warning: non-void function does not return a value in all control paths [-Wreturn-type]
-}
-^
-3 warnings generated.
-compiling modbus.c...
-../Core/GSM/modbus/modbus_master.c(38): warning: non-void function does not return a value [-Wreturn-type]
-}
-^
-1 warning generated.
-compiling modbus_master.c...
+Build target 'Main Advance (F407VE)'
 ../Core/GSM/write_settng.c(8): warning: In file included from...
 ../Core/GSM/../Inc/Variable.h(9): warning: In file included from...
 ../Core/Inc/Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
@@ -213,63 +35,36 @@ compiling modbus_master.c...
 ../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
 #define UART_BUFFER_SIZE 200
         ^
-1 warning generated.
+../Core/GSM/write_settng.c(39): warning: passing 'int8_t *' (aka 'signed char *') to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                        if( server_protocol.byte_count%100 == 9 )handle_status(&Floor[server_protocol.byte_count/100-1].Jump1Flag);
+                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/GSM/write_settng.h(8): note: passing argument to parameter 'stng_value' here
+void handle_status(volatile     uint8_t *stng_value);
+                                         ^
+../Core/GSM/write_settng.c(40): warning: passing 'int8_t *' (aka 'signed char *') to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                        if( server_protocol.byte_count%100 == 10 )handle_status(&Floor[server_protocol.byte_count/100-1].JumpNFlag);                            
+                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/GSM/write_settng.h(8): note: passing argument to parameter 'stng_value' here
+void handle_status(volatile     uint8_t *stng_value);
+                                         ^
+../Core/GSM/write_settng.c(52): warning: passing 'volatile bool (*)[360]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        if( server_protocol.byte_count == 5 )  packed_data = convert_struct_to_uint16(&PB.Hall, sizeof(PB.Hall));
+                                                                                                      ^~~~~~~~
+../Core/GSM/write_settng.h(10): note: passing argument to parameter 'struct_ptr' here
+uint16_t convert_struct_to_uint16(void* struct_ptr, size_t struct_size);
+                                        ^
+../Core/GSM/write_settng.c(53): warning: passing 'volatile bool (*)[360]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        if( server_protocol.byte_count == 6 )  packed_data = convert_struct_to_uint16(&PB.Cabin, sizeof(PB.Cabin));
+                                                                                                      ^~~~~~~~~
+../Core/GSM/write_settng.h(10): note: passing argument to parameter 'struct_ptr' here
+uint16_t convert_struct_to_uint16(void* struct_ptr, size_t struct_size);
+                                        ^
+5 warnings generated.
 compiling write_settng.c...
-../Core/SHASI/modbus_rtu_8bit.c(10): warning: implicit declaration of function 'stdout_putchar' is invalid in C99 [-Wimplicit-function-declaration]
-                        stdout_putchar(data[i]);
-                        ^
-1 warning generated.
-compiling modbus_rtu_8bit.c...
-../Core/GSM/gsm.c(8): warning: In file included from...
-../Core/GSM/../Inc/Variable.h(9): warning: In file included from...
-../Core/Inc/Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-../Core/GSM/gsm.c(98): warning: passing 'volatile uint8_t [200]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        memset(modbus.buf_rx,0,UART_BUFFER_SIZE);
-               ^~~~~~~~~~~~~
-C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
-extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
-                                        ^
-../Core/GSM/gsm.c(106): warning: passing 'volatile char [300]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        memset(HALL_RX_Buffer,0,UART_BUFFER_SIZE);
-               ^~~~~~~~~~~~~~
-C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
-extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
-                                        ^
-../Core/GSM/gsm.c(98): warning: 'memset' will always overflow; destination buffer has size 201, but size argument is 300 [-Wfortify-source]
-        memset(modbus.buf_rx,0,UART_BUFFER_SIZE);
-        ^
-4 warnings generated.
-compiling gsm.c...
-compiling retarget_io.c...
-../Core/SHASI/shasi.c(4): warning: In file included from...
-../Core/SHASI/../Inc/Variable.h(9): warning: In file included from...
-../Core/Inc/Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
-#define UART_BUFFER_SIZE                                300
-        ^
-../Core/SHASI/shasi.h(8): note: previous definition is here
-#define UART_BUFFER_SIZE 200
-        ^
-../Core/SHASI/shasi.c(81): warning: implicitly declaring library function 'memset' with type 'void *(void *, int, unsigned int)' [-Wimplicit-function-declaration]
-        memset( uart_rx_data.buf , 0 , UART_BUFFER_SIZE );
-        ^
-../Core/SHASI/shasi.c(81): note: include the header <string.h> or explicitly provide a declaration for 'memset'
-../Core/SHASI/shasi.c(89): warning: passing 'volatile char [300]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        memset( HALL_RX_Buffer , 0 , UART_BUFFER_SIZE );
-                ^~~~~~~~~~~~~~
-../Core/SHASI/shasi.c(81): warning: 'memset' will always overflow; destination buffer has size 201, but size argument is 300 [-Wfortify-source]
-        memset( uart_rx_data.buf , 0 , UART_BUFFER_SIZE );
-        ^
-4 warnings generated.
-compiling shasi.c...
 linking...
-Program Size: Code=68258 RO-data=10262 RW-data=2108 ZI-data=26404  
+Program Size: Code=68858 RO-data=10262 RW-data=2108 ZI-data=26412  
 FromELF: creating hex file...
-"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 34 Warning(s).
+"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -301,11 +96,11 @@ Package Vendor: Keil
       Include file:  CMSIS\Core\Include\tz_context.h
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
-      Source file:   Template\stdout_USART.c
-      Source file:   Source\retarget_io.c
       Source file:   Template\stdout_user.c
+      Source file:   Source\retarget_io.c
+      Source file:   Template\stdout_USART.c
       Source file:   Template\stdout_display.c
-Build Time Elapsed:  00:00:11
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -1731,7 +1731,7 @@ I (..\Core\Inc\..\SHASI\shasi.H)(0x676698F0)
 I (..\Core\GSM\modbus\modbus.h)(0x67BEF736)
 I (..\Core\Inc\..\Inc\Hardware.h)(0x66CE32F3)
 I (..\Core\GSM\modbus\..\gsm.h)(0x67BEFA06)
-F (..\Core\GSM\write_settng.c)(0x67BEDDD2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Main_Advance__F407VE_-IC:/Users/kave/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/kave/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o "main advance (f407ve)/write_settng.o" -MD)
+F (..\Core\GSM\write_settng.c)(0x67C6DA20)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Main_Advance__F407VE_-IC:/Users/kave/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/kave/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o "main advance (f407ve)/write_settng.o" -MD)
 I (..\Core\Inc\main.h)(0x676664A2)
 I (..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x63F3A4FA)
 I (..\Core\Inc\stm32f4xx_hal_conf.h)(0x66CDCFD6)
@@ -1781,7 +1781,7 @@ I (..\Core\Inc\..\SHASI\shasi.H)(0x676698F0)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x60367798)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x60367798)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x60367798)
-I (..\Core\GSM\write_settng.h)(0x67BEDE08)
+I (..\Core\GSM\write_settng.h)(0x67C6B92A)
 I (..\Core\GSM\..\Inc\Variable.h)(0x66DC1831)
 I (..\Core\Inc\n1202.h)(0x65D10590)
 I (C:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x60367798)
