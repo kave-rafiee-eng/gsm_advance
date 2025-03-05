@@ -27,7 +27,7 @@ Project File Date:  02/26/2025
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Main Advance (F407VE)'
-../Core/GSM/write_settng.c(8): warning: In file included from...
+../Core/GSM/gsm.c(8): warning: In file included from...
 ../Core/GSM/../Inc/Variable.h(9): warning: In file included from...
 ../Core/Inc/Serial.h(19): warning: 'UART_BUFFER_SIZE' macro redefined [-Wmacro-redefined]
 #define UART_BUFFER_SIZE                                300
@@ -35,36 +35,30 @@ Build target 'Main Advance (F407VE)'
 ../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
 #define UART_BUFFER_SIZE 200
         ^
-../Core/GSM/write_settng.c(39): warning: passing 'int8_t *' (aka 'signed char *') to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
-                        if( server_protocol.byte_count%100 == 9 )handle_status(&Floor[server_protocol.byte_count/100-1].Jump1Flag);
-                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/GSM/write_settng.h(8): note: passing argument to parameter 'stng_value' here
-void handle_status(volatile     uint8_t *stng_value);
-                                         ^
-../Core/GSM/write_settng.c(40): warning: passing 'int8_t *' (aka 'signed char *') to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
-                        if( server_protocol.byte_count%100 == 10 )handle_status(&Floor[server_protocol.byte_count/100-1].JumpNFlag);                            
-                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/GSM/write_settng.h(8): note: passing argument to parameter 'stng_value' here
-void handle_status(volatile     uint8_t *stng_value);
-                                         ^
-../Core/GSM/write_settng.c(52): warning: passing 'volatile bool (*)[360]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-                        if( server_protocol.byte_count == 5 )  packed_data = convert_struct_to_uint16(&PB.Hall, sizeof(PB.Hall));
-                                                                                                      ^~~~~~~~
-../Core/GSM/write_settng.h(10): note: passing argument to parameter 'struct_ptr' here
-uint16_t convert_struct_to_uint16(void* struct_ptr, size_t struct_size);
+../Core/GSM/gsm.c(126): warning: passing 'volatile uint8_t [200]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        memset(modbus.buf_rx,0,UART_BUFFER_SIZE);
+               ^~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
                                         ^
-../Core/GSM/write_settng.c(53): warning: passing 'volatile bool (*)[360]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-                        if( server_protocol.byte_count == 6 )  packed_data = convert_struct_to_uint16(&PB.Cabin, sizeof(PB.Cabin));
-                                                                                                      ^~~~~~~~~
-../Core/GSM/write_settng.h(10): note: passing argument to parameter 'struct_ptr' here
-uint16_t convert_struct_to_uint16(void* struct_ptr, size_t struct_size);
+../Core/GSM/gsm.c(134): warning: passing 'volatile char [300]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        memset(GSM_RX_Buffer,0,UART_BUFFER_SIZE);
+               ^~~~~~~~~~~~~
+../Core/GSM/gsm.h(26): note: expanded from macro 'GSM_RX_Buffer'
+#define GSM_RX_Buffer HALL_RX_Buffer
+                      ^~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
                                         ^
-5 warnings generated.
-compiling write_settng.c...
+../Core/GSM/gsm.c(126): warning: 'memset' will always overflow; destination buffer has size 201, but size argument is 300 [-Wfortify-source]
+        memset(modbus.buf_rx,0,UART_BUFFER_SIZE);
+        ^
+4 warnings generated.
+compiling gsm.c...
 linking...
-Program Size: Code=68858 RO-data=10262 RW-data=2108 ZI-data=26412  
+Program Size: Code=69830 RO-data=10262 RW-data=2108 ZI-data=26436  
 FromELF: creating hex file...
-"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 5 Warning(s).
+"Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -100,7 +94,7 @@ Package Vendor: Keil
       Source file:   Source\retarget_io.c
       Source file:   Template\stdout_USART.c
       Source file:   Template\stdout_display.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

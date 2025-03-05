@@ -6,9 +6,11 @@
 #define tbr_g1_TEST 0 
 #define tbr_g1_TEST_SHASI 1 
 #define tbr_g1_SHASI_RS485_GET 2 
+#define tbr_g1_SECOUND 3 
 
 //-------------------------------------------SEC
-#define tbrc_s1_DISPLAY_SHOW_MODE 1 
+//#define tbrc_s1_DISPLAY_SHOW_MODE 1 
+#define tbrc_s1_EEPROM_SAVE 0
 
 //-------------------------------------------CPU_TIMER_CONFIG
 

@@ -92,7 +92,7 @@ void server_protocol_json(){
 	buffer_http_send_to_server_index=0;
 	
   memset(buffer_http_send_to_server, 0, sizeof(buffer_http_send_to_server));
-  snprintf(buffer_http_send_to_server, sizeof(buffer_http_send_to_server), "{\"serial\":\"100\"");
+  snprintf(buffer_http_send_to_server, sizeof(buffer_http_send_to_server), "{\"serial\":\"%d\"",BoardFixedID);
 	
 	for( char n=0; n<10; n++){
 		
@@ -117,9 +117,8 @@ void server_protocol_json(){
 							if( json_get_data(json.document , str_cmp)  == TYPE_STR )server_protocol.status = atoi(json.str_data);
 							if( json_get_data(json.document , str_cmp)  == TYPE_WORD )server_protocol.status = json.data;		
 								
-								
 								server_protocol_data_manage();
-			
+								
 						}
 					}
 				}	

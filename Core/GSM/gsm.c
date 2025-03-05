@@ -8,23 +8,51 @@
 #include "../Inc/Variable.h"
 #include "../Inc/Serial.h"
 
+// CPU Timer
+extern struct cpu_timer_8bit_reset_contorol_Seconds tbrc_s1[def_num_tbrc_s1];
+extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
 // External variables
 extern volatile uint8_t EEPROMSaveFlag;
 extern char HALL_TX_Buffer[UART_BUFFER_SIZE];
 extern volatile char HALL_RX_Buffer[UART_BUFFER_SIZE];
-extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
+
 
 // External structures
 extern struct JSON_OUT json;
 extern struct MODBUS_SLAVE modbus_slave;
 
+char F_save_EEPROM=0;
+
 // 
 int i_get = 0;
 int last_i_get = 0;
-int device_serial = 100;  // Example device serial number
-	
+
 void GSM_Processing() {
+
+
+	  tbr_g1[tbr_g1_SECOUND].EN = 1;  
+    tbr_g1[tbr_g1_SECOUND].C_set_time = 1000;
+    if (tbr_g1[tbr_g1_SECOUND].F_end) { tbr_g1[tbr_g1_SECOUND].F_end = 0;
+			timer_second_manager();
+		}
+			
+			
+		if( F_save_EEPROM == 1 ){ F_save_EEPROM=0;
+			tbrc_s1[tbrc_s1_EEPROM_SAVE].EN=1;
+			tbrc_s1[tbrc_s1_EEPROM_SAVE].AUTO=0;
+			tbrc_s1[tbrc_s1_EEPROM_SAVE].C_set_time=4;		
+		}
+		if( tbrc_s1[tbrc_s1_EEPROM_SAVE].F_end ){ tbrc_s1[tbrc_s1_EEPROM_SAVE].F_end=0;
+				EEPROMSaveFlag=1;
+				tbrc_s1[tbrc_s1_EEPROM_SAVE].EN=0;
+		}
+	
+		if (IS_DMA_TRANSFER_COMPLETE()) {
+				CLEAR_DMA_TRANSFER_FLAG();  // Clear transfer complete flag
+				RS485_RECEIVE_MODE();       // Set RS485 to receive mode
+		}
+
     // Calculate the number of received bytes in the buffer
     i_get = UART_BUFFER_SIZE - DMA_NDTR;
     
@@ -93,18 +121,18 @@ extern struct MODBUS_RTU modbus;
 
 void modbus_get_data_dma(){
 	
-	DMA1_Stream2->CR  = 0; 
+	DMA_CR  = 0; 
 	
 	memset(modbus.buf_rx,0,UART_BUFFER_SIZE);
 	
-	modbus.len =  UART_BUFFER_SIZE - DMA1_Stream2->NDTR;
+	modbus.len =  UART_BUFFER_SIZE - DMA_NDTR;
 	for( char i=0; i<modbus.len; i++ ){
-		modbus.buf_rx[i]= HALL_RX_Buffer[i];
+		modbus.buf_rx[i]= GSM_RX_Buffer[i];
 	}
 					
-	DMA1_Stream2->NDTR = UART_BUFFER_SIZE;
-	memset(HALL_RX_Buffer,0,UART_BUFFER_SIZE);
-	DMA1_Stream2_Init();
+	DMA_NDTR = UART_BUFFER_SIZE;
+	memset(GSM_RX_Buffer,0,UART_BUFFER_SIZE);
+	GSM_DMA_Init();
 	
 }
 
@@ -118,6 +146,4 @@ int UART_GSM_send (int ch) {
   return 1;
 }
 
-
-//HALL_SendData(strlen(HALL_TX_Buffer));	
 
