@@ -35,13 +35,13 @@ Build target 'Main Advance (F407VE)'
 ../Core/Inc/../SHASI/shasi.H(8): note: previous definition is here
 #define UART_BUFFER_SIZE 200
         ^
-../Core/GSM/gsm.c(126): warning: passing 'volatile uint8_t [200]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+../Core/GSM/gsm.c(127): warning: passing 'volatile uint8_t [200]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
         memset(modbus.buf_rx,0,UART_BUFFER_SIZE);
                ^~~~~~~~~~~~~
 C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
 extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
                                         ^
-../Core/GSM/gsm.c(134): warning: passing 'volatile char [300]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+../Core/GSM/gsm.c(135): warning: passing 'volatile char [300]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
         memset(GSM_RX_Buffer,0,UART_BUFFER_SIZE);
                ^~~~~~~~~~~~~
 ../Core/GSM/gsm.h(26): note: expanded from macro 'GSM_RX_Buffer'
@@ -50,13 +50,13 @@ extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__
 C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
 extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
                                         ^
-../Core/GSM/gsm.c(126): warning: 'memset' will always overflow; destination buffer has size 201, but size argument is 300 [-Wfortify-source]
+../Core/GSM/gsm.c(127): warning: 'memset' will always overflow; destination buffer has size 201, but size argument is 300 [-Wfortify-source]
         memset(modbus.buf_rx,0,UART_BUFFER_SIZE);
         ^
 4 warnings generated.
 compiling gsm.c...
 linking...
-Program Size: Code=69830 RO-data=10262 RW-data=2108 ZI-data=26436  
+Program Size: Code=69838 RO-data=10262 RW-data=2108 ZI-data=26436  
 FromELF: creating hex file...
 "Main Advance (F407VE)\Main Advance (F407VE).axf" - 0 Error(s), 4 Warning(s).
 
@@ -94,7 +94,7 @@ Package Vendor: Keil
       Source file:   Source\retarget_io.c
       Source file:   Template\stdout_USART.c
       Source file:   Template\stdout_display.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

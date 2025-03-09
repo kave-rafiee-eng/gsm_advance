@@ -42,6 +42,7 @@ void GSM_Processing() {
 			tbrc_s1[tbrc_s1_EEPROM_SAVE].EN=1;
 			tbrc_s1[tbrc_s1_EEPROM_SAVE].AUTO=0;
 			tbrc_s1[tbrc_s1_EEPROM_SAVE].C_set_time=4;		
+			tbrc_s1[tbrc_s1_EEPROM_SAVE].I_time=1;	
 		}
 		if( tbrc_s1[tbrc_s1_EEPROM_SAVE].F_end ){ tbrc_s1[tbrc_s1_EEPROM_SAVE].F_end=0;
 				EEPROMSaveFlag=1;
